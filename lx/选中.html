@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+        .inventory{
+           display: none;
+           margin-top: 10px;
+           margin-left: 25px;
+        }
+        .inventory label{
+            margin-right: 10px;
+        }
+        select,option{
+            width: 193px;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <label for="goods">产品属性：</label>
+    <select id="goods">
+        <option value="1" selected>实物</option>
+        <option value="2" >虚拟物</option>
+    </select>
+    <div class="inventory">
+        <input type="radio" name="inventoryGoods" id="" value="4" >
+        <label for="">二维码核销</label>
+        <input type="radio" name="inventoryGoods" id="" value="5" >
+        <label for="">现场核销</label>
+    </div>
+</form>    
+</body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script>
+$(function(){
+    let val = $("#goods").val()
+    show(val)
+    $("#goods").change(function(){
+        let va = $(this).val()
+        show(va)
+    })
+    //判断是否显示
+    function show(s){ 
+        switch(s){
+            case "1": $(".inventory").hide();break;
+            case "2": $(".inventory").show();break;
+            default:break;
+        }
+     }
+      let leg = $(".inventory").children().length
+      console.log(leg)
+})
+
+</script>

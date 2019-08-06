@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/jquery-1.12.3.min.js"></script>
+    <style>
+        img{
+            width: 50px;
+            height: 50px;
+            border: none;
+            vertical-align: middle;
+            margin: 6px 0 0 0;
+        }
+        span{
+            font-size: 56px;
+            vertical-align: middle;
+        }
+        .week{
+            width: 100px;
+            height: 67px;
+            margin: 4px 0 0 -28px;
+        }
+    </style>
+</head>
+
+<body >
+    <div>
+        <span>北京时间</span>
+        <img class="hour1">
+        <img class="hour2">
+        <span>：</span>
+        <img class="minute1">
+        <img class="minute2">
+        <span>：</span>
+        <img class="second1">
+        <img class="second2">
+        <span>星期</span>
+        <img src="" class="week">
+    </div>
+ 
+</body>
+
+</html>
+<script type="text/javascript">
+     $(function(){
+        function nowTime(){
+            var date = new Date();
+            console.log(date)
+            var h = date.getHours();//小时
+            var m = date.getMinutes();//分钟
+            var s = date.getSeconds();//秒
+            var t = date.getDay()//星期
+            function totwo(e){
+                return e<10?"0"+e:""+e;
+            }
+            function imgSrc(a,b){
+                return a.attr({ src:'../img/'+b+'.png' })
+            }
+            function imgSrc1(a,b){
+                return a.attr({ src:'../img/数字'+b+'.png' })
+            }
+            h = totwo(h);
+            var h1 = h.slice(0,1);
+            var h2 = h.slice(1);
+            m = totwo(m);
+            var m1 = m.slice(0,1);
+            var m2 = m.slice(1);
+            s = totwo(s);
+            var s1 = s.slice(0,1);
+            var s2 = s.slice(1);
+            imgSrc1( $(".hour1"),h1);
+            imgSrc1( $(".hour2"),h2);
+            imgSrc1( $(".minute1"),m1);
+            imgSrc1( $(".minute2"),m2);
+            imgSrc1( $(".second1"),s1);
+            imgSrc1( $(".second2"),s2);
+            switch (t) {
+                case 0: t = "星期日";  break;
+                case 1: t = "星期一";  break;
+                case 2: t = "星期二";  break;
+                case 3: t = "星期三";  break;
+                case 4: t = "星期四";  break;
+                case 5: t = "星期五";  break;
+                case 6: t = "星期六";  break;
+            }
+           var t1 = t.slice(2);
+           imgSrc($(".week"),t1)
+        }
+        nowTime();
+        setInterval(nowTime,200);
+    })
+</script>
+

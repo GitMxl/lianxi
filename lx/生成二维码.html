@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/flexible.js"></script>
+    <title>二维码生成器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            min-width: 100%;
+            font-family: "微软雅黑";
+        }
+        h1{
+            font-size: 24px;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .write{
+            border: 1px solid blue;
+            padding: 30px;
+            box-sizing: border-box;
+            width: 56%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .qrCodeBox{
+            border: 1px solid blue;
+            width: 300px;
+            height: 300px;
+            margin-right:20%; 
+            box-sizing: border-box;
+            text-align: center;
+            color: #999999;
+            padding: 50px;
+            margin: 40px auto;
+            position: relative;
+        }
+        input[type="button"]{
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 80px;
+            height: 30px;
+            font-size: 18px;
+            background: #3385ff;
+            color:#fff;
+            border:none;
+            border-radius: 10px;
+        }
+        textarea{
+            border: 1px solid orange;
+            padding: 25px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 18px;
+            height: 300px;
+        }
+        input[type="file"]{
+            width: 200px ;
+            height: 100px;
+            opacity: 0;
+            z-index: 2;
+        }
+        #qrcode{
+            width: 200px ;
+            height: 200px;
+            position: relative;
+        }
+        .img1{
+            display: none;
+            width: 200px;
+            height: 200px;
+        }
+        .img{
+            float: right;
+            width: 200px;
+            height: 300px;
+            border: 1px solid orange;
+            position: relative;
+        }
+        #img2{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -25px;
+            margin-top: -25px;
+        }
+        .butt{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 20px;
+            font-weight: bolder;
+            color: violet;
+            text-align: center;
+            z-index:-1;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>二维码生成器</h1>
+        <div class="write">
+            <textarea id="text" cols="80" placeholder="请输入内容,（支持文本、链接）"></textarea>
+            <div class="img">
+                <input type="file"  id="file">
+                <div class="butt">
+                    上传图片
+                </div>
+                <img src="#" id="img3" class="img1"/>
+            </div>
+            <input type="button" value="生成">
+        </div>
+        <div class="qrCodeBox">
+            <div id="qrcode">此出生成二维码</div>
+            <img src="#" id="img2" class="img1"/>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jquery.qrcode.min.js"></script>
+<script type="text/javascript">
+    let text,
+        width = 200,
+        height = 200,
+        background = "#fff",
+        foreground = "#000",
+        qrCode = $("#qrcode"),
+        qrCodeBox = $(".qrCodeBox"),
+        img2 = $("#img2"),
+        img3 = $("#img3"),
+        Img3 = document.getElementById('img3'),
+        Img2 = document.getElementById('img2'),
+        file = document.getElementById('file');
+        $("#text").focus();
+    $("input:button").click(function (e) { 
+        e.preventDefault();
+        text = $("#text").val();
+        if(text != "" ){
+            qrCode.html("");
+            QRCODE(qrCode,text,width,height,background,foreground);
+            if(img2.attr("src") != "#"){
+                img2.show()
+            }
+        }else{
+            alert("请输入内容")
+        }
+    });
+    $("input:file").change(function(){
+        var reads = new FileReader();
+        f = file.files[0];
+        reads.readAsDataURL(f);
+        reads.onload = function(e) {
+            Img3.src = this.result;
+            Img2.src = this.result;
+           img3.css("display", "block");
+        };
+    })
+    function QRCODE(q,t,w,h,b,f){
+        q.qrcode({
+            render: "canvas",
+            text: toUtf8(t),
+            width: w,
+            height: h,
+            ecLevel: 'H',
+            background: b,
+            foreground: f 
+        });
+    }
+    // 中文转码
+    function toUtf8(str){
+        var out,i,len,c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>日期类倒计时</title>
+    <script type="text/javascript">
+      window.onload=function(){
+        var odiv=document.getElementById("time");
+        var obtn=document.getElementById("btn");
+        var omusic=document.getElementById("music");
+        obtn.onclick=function(){//按钮点击 音乐停止播放
+          omusic.pause();
+        }
+        function totwo(e){
+          return e<10?"0"+e:""+e;//如果取得的数字为个数则在其前面增添一个0
+        }
+        function go(){//把获取时间的功能封装到函数内    注意 时间要向下取整避免小数
+            var time1=new Date();//获取当前时间 获取的市1970年1年1月日到现在的毫秒数(必须写在函数或者定时器内 每一次变化都要重新获取当前时间)
+            var time2=new Date(2019,5,1,00,00,00);//设置需要到达的时间 也是获取的毫秒数
+            var conS=Math.floor((time2.getTime()-time1.getTime())/1000);//获得差值除以1000转为秒
+            var day=totwo(Math.floor(conS/86400));// 差值/60/60/24获取天数
+            var hour=totwo(Math.floor(conS%86400/3600)); //  取余/60/60获取时(取余是获取conS对应位置的小数位)
+            var min=totwo(Math.floor(conS%86400%3600/60));// 取余/60获取分
+            var s=totwo(Math.floor(conS%60)); //取总秒数的余数
+            var html="倒计时"+day+"天"+hour+"时"+min+"分"+s+"秒"; 
+            odiv.innerHTML=html;//把字符串添加进div中
+            if(conS<0){//倒计时完成 执行功能，这里是播放MP3
+              clearInterval(time);//执行功能时要清除时间函数
+              odiv.innerHTML="春节快乐！";
+            }          
+        }
+        go();//调用函数
+        var time=setInterval(go,1000);//设置定时器 每一秒执行一次
+      }
+    </script>
+  </head>
+  <body>
+    <button id="btn">停止</button>
+    <audio src='../img/bgm.mp3' id="music"></audio>
+    <div id="time"></div>
+  </body> 
+</html>

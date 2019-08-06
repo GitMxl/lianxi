@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	</meta>
+	<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+			font-family: "微软雅黑";
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			height: 100%
+		}
+
+		ul,
+		li,
+		ol {
+			list-style: none;
+		}
+
+		body {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.ban-box a {
+			text-decoration: none;
+			color: black;
+			width: 402px;
+			height: 58px;
+			display: inline-block;
+			margin-top: 5px;
+			background: #ffffff;
+			border-radius: 29px;
+			text-align: center;
+			line-height: 58px;
+			letter-spacing: 8px;
+		}
+
+		.ban-box {
+			position: absolute;
+			left: 39.5%;
+			top: 88.1%;
+			width: 402px;
+			height: 68px;
+			background: rgb(255, 255, 255, 0.6);
+			text-align: center;
+			font-size: 30px;
+			border-radius: 34px;
+			font-weight: bolder;
+		}
+
+		.banner,
+		.bd,
+		ul,
+		li {
+			width: 100%;
+			height: 100%;
+		}
+
+		.header {
+			font-family: cursive;
+			position: absolute;
+			left: 0;
+			top: 7%;
+			font-size: 58px;
+			font-weight: 800;
+			color: #1b1b1b;
+			z-index: 6;
+			height: auto;
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<p>陇县农副产品溯源查询系统</p>
+	</div>
+	<div class="banner" id="banner">
+		<div class="bd">
+			<ul>
+				<li>
+					<img src="../img/000001.jpg" /></a>
+
+				</li>
+				<li>
+					<img src="../img/11111.jpg" /></a>
+
+				</li>
+				<li>
+					<img src="../img/22222.jpg" /></a>
+
+				</li>
+				<li>
+					<img src="../img/33333.jpg" /></a>
+				</li>
+				<li>
+					<img src="../img/44444.jpg" /></a>
+				</li>
+				<li>
+					<img src="../img/55555.jpg" /></a>
+
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="ban-box">
+		<a href="">查询溯源</a>
+	</div>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+	TouchSlide({
+		slideCell: "#banner",
+		mainCell: ".bd ul",
+		effect: "leftLoop",
+		autoPlay: true //自动播放
+
+	});
+	$(function () {
+		var cookie = {
+			set: function (key, val, time) { //设置cookie方法
+				var date = new Date(); //获取当前时间
+				var expiresDays = time; //将date设置为n天以后的时间
+				date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000); //格式化为cookie识别的时间
+				document.cookie = key + "=" + val + ";expires=" + date.toGMTString(); //设置cookie
+			},
+			get: function (key) { //获取cookie方法
+				/*获取cookie参数*/
+				var getCookie = document.cookie.replace(/[ ]/g, ""); //获取cookie，并且将获得的cookie格式化，去掉空格字符
+				var arrCookie = getCookie.split(";") //将获得的cookie以"分号"为标识 将cookie保存到arrCookie的数组中
+				var tips; //声明变量tips
+				for (var i = 0; i < arrCookie.length; i++) { //使用for循环查找cookie中的tips变量
+					var arr = arrCookie[i].split("="); //将单条cookie用"等号"为标识，将单条cookie保存为arr数组
+					if (key == arr[0]) { //匹配变量名称，其中arr[0]是指的cookie名称，如果该条变量为tips则执行判断语句中的赋值操作
+						tips = arr[1]; //将cookie的值赋给变量tips
+						break; //终止for循环遍历
+					}
+				}
+			},
+			delete: function (key) { //删除cookie方法
+				var date = new Date(); //获取当前时间
+				date.setTime(date.getTime() - 10000); //将date设置为过去的时间
+				document.cookie = key + "=v; expires =" + date.toGMTString(); //设置cookie
+
+				return tips;
+			}
+		}
+		// cookie.set("pop", "sss", 24)
+		function closeWebPage() {
+			if (navigator.userAgent.indexOf("MSIE") > 0) {
+				if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+					window.opener = null;
+					window.close();
+					cookie.delete("pop")
+				} else {
+					window.open('', '_top');
+					window.top.close();
+					cookie.delete("pop")
+				}
+			} else if (navigator.userAgent.indexOf("Firefox") > 0) {
+				window.location.href = 'about:blank ';
+				cookie.delete("pop")
+
+			} else {
+				window.opener = null;
+				window.open('', '_self');
+				window.close();
+				cookie.delete("pop")
+			}
+		}
+
+	})
+</script>

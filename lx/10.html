@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>adasd</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script src="../js/flexible.js"></script>
+<script src="../js/alert.min.js"></script>
+<script type="text/javascript">
+   var a = [-1, -1, 8, -3, -3, 2, 2, -2, -2, 3, -1, -1];
+
+   function f(s, e) {
+                                          var ret = [];
+      for (var i in s) {
+         ret.push(e(s[i]));
+      }
+      return ret;
+   }
+   var b = f(a, function (n) {
+      return n > 0 ? n : 0
+   }) //相当于遍历a数组，取其内部大于0的数字，如果小于0则替换为0并输出
+   alert('余额为0，不能提现！', function aleTen() {
+
+   });
+   
+
+   //alert('余额为1，不能提现！');
+</script>

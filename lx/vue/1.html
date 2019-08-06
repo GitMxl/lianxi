@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue1</title>
+    <script src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/agent.css">
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="新增" @click="add($event)" id="a">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <td title="代理商编号">代理商编号</td>
+                    <td title="代理商名称">代理商名称</td>
+                    <td title="地址">地址</td>
+                    <td title="联系人">联系人</td>
+                    <td title="联系电话">联系电话</td>
+                    <td title="共享码">共享码</td>
+                    <td title="操作">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in list">
+                    <td>
+                        {{item.num}}
+                    </td>
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td>
+                        {{item.address}}
+                    </td>
+                    <td>
+                        {{item.people}}
+                    </td>
+                    <td>
+                        {{item.phone}}
+                    </td>
+                    <td v-bind:title="item.qrcode">
+                        {{item.qrcode}}
+                    </td>
+                    <td>
+                        <i class="fa fa-pencil edit" @click="edit(index,$event)"   title="修改"></i>
+                        <i class="fa fa-trash dele"  @click="dele(index,$event)" title="删除"></i>
+                        <i class="fa fa-download" @click="down(index,$event)" title="下载二维码"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="backBox"></div>
+        <div class="maskBox">
+            <div>
+                <label for="">代理商编号:</label>
+                <input type="text" class="Anumber" v-model="task.num">
+            </div>
+            <div>
+                <label for="">代理商名称:</label>
+                <input type="text" class="Aname" v-model="task.name">
+            </div>
+            <div>
+                <label for="">代理商地址:</label>
+                <input type="text" class="Aadd" v-model="task.address">
+            </div>
+            <div>
+                <label for="">联系人:</label>
+                <input type="text" class="Apeople" v-model="task.people">
+            </div>
+            <div>
+                <label for="">联系电话:</label>
+                <input type="text" class="Aphone" v-model="task.phone">
+            </div>
+            <input type="button" value="提交" @click="saveBox($event)" id="save">
+            <input type="button" @click="closeBox($event)" value="返回" class="close">
+        </div>
+    </div>
+   
+</body>
+</html>
+<script type="text/javascript" src="../../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el:'#app',
+        data: {
+            task:{
+                num:"",
+                name:"",
+                address:"",
+                people:"",
+                phone:"",
+                qrcode:""
+            },
+            n:'-1',//记录第几个修改
+            q:'',//新增共享号
+            list:[
+                    {
+                        num:"1",
+                        name:"代理商一",
+                        address:"陕西",
+                        people:"小明",
+                        phone:"12345678765",
+                        qrcode:"http://www.baidu.com"
+                    },
+                    {
+                        num:"2",
+                        name:"代理商二",
+                        address:"陕西",
+                        people:"小明",
+                        phone:"12345678765",
+                        qrcode:"http://www.hao123.com"
+                    },
+                    {
+                        num:"3",
+                        name:"代理商三",
+                        address:"陕西",
+                        people:"小明",
+                        phone:"12345678765",
+                        qrcode:"https://www.csdn.net/"
+                    },
+                    {
+                        num:"4",
+                        name:"代理商四",
+                        address:"陕西",
+                        people:"小明",
+                        phone:"12345678765",
+                        qrcode:"http://192.168.10.72:81/zentao/my/"
+                    }
+            ]
+        },
+        methods: {
+            edit:function(index,e){
+                e.cancelBubble=true;
+                e.preventDefault();
+                $(".backBox").show();
+                $(".maskBox").show();
+
+                // 显示
+                 // 获取编号内容
+                this.task.num = this.list[index].num;
+                // 获取名称内容
+                this.task.name = this.list[index].name;
+                // 获取地址内容
+                this.task.address = this.list[index].address;
+                // 获取姓名内容
+                this.task.people = this.list[index].people;
+                // 获取电话内容
+                this.task.phone = this.list[index].phone;
+                this.n = index;
+            },
+            dele:function(index,e){
+                if(confirm("确认删除？")){
+                    this.list.splice(index,1);
+                }
+            },
+            closeBox:function(e){
+                    e.cancelBubble=true;
+                    e.preventDefault();
+                    $(".backBox").hide();
+                    $(".maskBox").hide();
+                    console.log(this.n)
+            },
+            saveBox:function(e){
+                e.cancelBubble=true;
+                e.preventDefault();
+                $(".backBox").hide();
+                $(".maskBox").hide();
+                n = this.n;
+                if(n >= 0 ){
+                    this.list[n].num = $(".Anumber").val();
+                    this.list[n].name = $(".Aname").val();
+                    this.list[n].address = $(".Aadd").val();
+                    this.list[n].people = $(".Apeople").val();
+                    this.list[n].phone = $(".Aphone").val();
+                }else{
+                    this.task.num = $(".Anumber").val();
+                    this.task.name = $(".Aname").val();
+                    this.task.address = $(".Aadd").val();
+                    this.task.people = $(".Apeople").val();
+                    this.task.phone = $(".Aphone").val();
+                    let mydata = new Date();
+                    let n = mydata.getFullYear();
+                    let y = mydata.getMonth()+1; 
+                    if(y >0 && y< 9){
+                        y = "0" + y
+                    }
+                    let r = mydata.getDate();
+                    if(r >0 && r< 9){
+                        r = "0" + r
+                    }
+                    let s = mydata.getHours();
+                    if(s >0 && s< 9){
+                       s = "0" + s
+                    }
+                    let f = mydata.getMinutes();
+                    if(f >0 && f< 9){
+                        f = "0" + f
+                    }
+                    let m = mydata.getSeconds(); 
+                    if(m >0 && m< 9){
+                        m = "0" + m
+                    } 
+                    this.q = n+y+s+f+m;
+                    this.task.qrcode = this.q;
+                    this.list.push(this.task)
+                    this.task = {
+                        num:"",
+                        name:"",
+                        address:"",
+                        people:"",
+                        phone:"",
+                        qrcode:''
+                    }
+                }
+            },
+            add:function(e){
+                e.cancelBubble=true;
+                e.preventDefault();
+                $(".backBox").show();
+                $(".maskBox").show();
+                
+                $(".maskBox div input").val("");
+            },
+            down:function(i,e){
+                e.cancelBubble=true;
+                e.preventDefault();
+                window.location.href = this.list[i].qrcode;
+            }
+        },
+    })
+</script>

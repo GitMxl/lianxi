@@ -1,0 +1,214 @@
+
+@charset "utf-8";
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,input{ margin:0; padding:0; }
+html, body { min-height: 100%;}
+body {background:#fff;font-size: 16px; font-family:  微软雅黑,Arial,Verdana,"宋体";overflow: auto;}
+table,tr,th,td{ border:none/*0px solid #CDCDCD*/; border-collapse:collapse;}
+ol,ul {list-style: none;}
+a{ text-decoration:none; outline:none;}
+img {border: 0;}
+em {font-style: normal;}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border: 0;
+    table-layout:fixed;
+}
+
+input {
+    outline: none;
+    border: 0;
+}
+textarea{
+    border: 0;
+}
+
+.tableContainer{
+    width: 96%;
+    padding: 1.4%;
+    background-color: #fff;
+    border-radius: 6px;
+    margin:2% auto;
+    box-sizing: border-box;
+    min-height:800px;
+}
+.listContent-header{
+    overflow: hidden;
+}
+.listContent-header label{
+    font-weight: 600;
+}
+.input-Box{
+    height: auto;
+    overflow: hidden;
+    clear: both;
+}
+
+.agent-input{
+    font-size: 16px;
+    height: 40px;
+    margin-bottom: 32px;
+    width: 400px;
+    text-align: right;
+    float: left;
+    margin-right: 20px;
+}
+.agent-input input{
+    border: 1px solid #d3d3d3;
+    height: 40px;
+    width: 60%;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    margin-left: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.subBox{
+    float:right;
+    margin-right: 28%;
+}
+.subBox input{
+    background: #445977;
+    color: #fff;
+    width: 74px;
+    height: 34px;
+    border: 0;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    margin-left: 40px;
+}
+
+
+table{
+    color: #fff;
+    text-align: center;
+    border:1px solid #999999;
+    border-right: 0;
+    width: 100%;
+    overflow: hidden;
+}
+table thead tr{
+    background: #445977;
+    color: white;
+}
+table thead tr td, table tbody tr td{
+    width:100px;
+    height: 40px;
+    border-right: 1px solid #999999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+table thead tr, table tbody tr{
+    border-bottom:1px solid #999999;
+    width: 100%;
+    overflow: hidden;
+}
+table thead td:last-child, table tbody td:last-child, table tbody tr:last-child{
+    border-bottom: 0;
+}
+table tbody tr{
+    color: #000;
+}
+
+.fa{
+    color: #666;
+    margin-left: 10px;
+}
+/* 弹出框 */
+.maskBox{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 566px;
+    height: 380px;
+    background: #fff;
+    margin-left:-298px;
+    margin-top:-190px;
+    z-index: 2;
+    text-align: center;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    overflow: hidden;
+}
+.maskBox div {
+    text-align: right;
+    width: 80%;
+    margin: 20px 0 0;
+    box-sizing: border-box;
+}
+.maskBox div input{
+    border: 1px solid #d3d3d3;
+    height: 40px;
+    width: 60%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-left: 10px;
+    padding:0 20px 0 10px;
+    box-sizing: border-box;
+    color: #000;
+}
+.maskBox input[type="button"]{
+    background: #445977;
+    color: #fff;
+    width: 66px;
+    height: 30px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    margin-top: 20px;
+    margin-left: 35px;
+}
+.maskBox label{
+    font-weight: 600;
+}
+.backBox{
+    display: none;
+    background: #000;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+#a{
+    background: #445977;
+    color: #fff;
+    width: 66px;
+    height: 30px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    margin: 20px 0;
+    float: right;
+}
+
+
+
+'transform': 'translate(-50%, -50%)',
+        '-webkit-transform': 'translate(-50%, -50%)',
+        '-moz-transform': 'translate(-50%, -50%)',
+        '-ms-transform': 'translate(-50%, -50%)',
+        '-o-transform': 'translate(-50%, -50%)',

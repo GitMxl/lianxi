@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aes</title>
+</head>
+<script src="../js/crypto-js.js"></script>
+<script src="../js/aes.js"></script>
+<body>
+ 
+<script type="text/javascript">
+
+
+function encrypt(a, b){
+    var ps = CryptoJS.enc.Utf8.parse(b);
+    var cs = CryptoJS.enc.Utf8.parse(a);
+    var encrypted = CryptoJS.AES.encrypt(cs,b, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    return encrypted.toString();
+}
+
+
+var d ="5D9D796E18FA286AD1B28262143F2C47303500C648D201989F46969E11EA4808";
+var f= "dqPqAh7YYCPC+zSwuv0d0w==";
+var g = "wx3884c03a4f8ff28f";
+function decrypt(a, b){
+    var ps = CryptoJS.enc.Utf8.parse(b);
+    // var decrypt = CryptoJS.AES.decrypt({a:CryptoJS.enc.Base64.parse(a)}, b, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    var decrypt = CryptoJS.AES.decrypt(a, ps, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});    
+    return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+}
+
+
+
+
+
+g= encrypt(g,f)
+console.log(g,"g")
+
+var i = decrypt(g,f)
+console.log(i,"i")
+
+
+</script>
+</body>
+</html>

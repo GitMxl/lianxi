@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            div{
+        width: 100%;
+        padding: 0.2rem 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #404040;
+        border-bottom: 1px solid #d9d9d9;
+        overflow: hidden;
+        zoom: 1;
+        display: flex;
+     }
+     span{
+         display: block;
+     }
+     img{
+         width: 200px;
+         height: 600px;
+     }
+     p{
+         background: red;
+     }
+     </style>
+    </head>
+    <body>
+        <img class="lazy pic">
+        <img src="../img/3.jpg" class="lazy">
+        <img src="../img/2.jpg" class="lazy">
+        <img src="../img/4.jpg" class="lazy">
+        <img src="../img/5.jpg" class="lazy">
+        <img src="../img/6.jpg" class="lazy">
+        <img src="../img/7.jpg" class="lazy">
+        <img src="../img/8.jpg" class="lazy">
+        <img src="../img/9.jpg" class="lazy">
+        <img src="../img/10.jpg" class="lazy">
+        <p>的撒发生</p>
+    </body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jquery.lazyload.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        let leg = $("p").text()
+        let p = $("p")
+        if (leg.length > 6) {
+            p.css({
+                "line-height": "2.1rem"
+            })
+        } else {
+            p.css({
+                "line-height": "1.1rem"
+            })
+        }
+        console.log(leg.length)
+    });
+    $(function() {
+        function getBase64Image(img) {
+            var canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            var ext = img.src.substring(img.src.lastIndexOf(".") + 1).toLowerCase();
+            var dataURL = canvas.toDataURL("image/" + ext);
+            return dataURL;
+        }
+        var imgLink = "../img/222.jpg";
+        var tempImage = new Image();
+        tempImage.src = imgLink;
+        tempImage.crossOrigin = "*";
+        tempImage.onload = function() {
+            var base64 = getBase64Image(tempImage);
+            console.log(base64);
+            $(".pic").attr({
+                "src": base64
+            })
+        }
+    })
+</script>

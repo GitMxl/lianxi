@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/flexible.js"></script>
+    <title></title>
+    <style>
+        input{
+            outline: none;
+        }
+        div {
+            width: 550px;
+            margin: 100px auto 0;
+        }
+        p {
+            display: inline;
+        }
+        .jisuanqi{
+            border: 1px solid #999;
+            overflow: hidden;
+            position: relative;
+        }
+        #s{
+            background: #eee;
+            display: block;
+            height: 33px;
+            text-align: right;
+            color: #666666;
+        }
+        #Sum{
+            text-align: right;
+            background: #eee;
+            display: block;
+            height: 33px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .shuzi{
+            width: 500px;
+            margin: 0;
+            float: left;
+        }
+        .shuzi input[type="button"]{
+            width: 32%;
+            height: 23px;
+        }
+        .yunsuan{
+            float: left;
+            width: 50px;
+            margin: 0;
+        }
+        .yunsuan input[type="button"]{
+            width: 50px;
+        }
+        .deng{
+            position: absolute;
+            left: 325px;
+            top: 136px;
+            width:163px !important;
+            height: 23px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="one">
+        <select id="compute">
+            <option value="+" checked>+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="two">
+        <button class="button">=</button>
+        <p id="sum"></p>
+    </div>
+    <div class="jisuanqi">
+        <p id="s"></p>
+        <p id="Sum">0</p>
+        <div class="shuzi">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="0">
+            <input type="button" value=".">
+            <input type="button" value="=" class="deng">
+        </div>
+        <div class="yunsuan">
+            <input type="button" value="+">
+            <input type="button" value="-">
+            <input type="button" value="*">
+            <input type="button" value="/">
+            <input type="button" value="CE" class="ce">
+        </div>
+    </div>
+</body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script>
+    $(function () {
+        $(".button").click(function () {
+            if ($("#one").val() != "" && $("#two").val() != "") {
+                let one = parseFloat($("#one").val()),
+                    two = parseFloat($("#two").val()),
+                    compute = $("#compute").val();
+                let n;
+                function add(a, b, c) {
+                    switch (b) {
+                        case "+":
+                            n = a + c;
+                            break;
+                        case "-":
+                            n = a - c;
+                            break;
+                        case "*":
+                            n = a * c;
+                            break;
+                        case "/":
+                            n = a / c;
+                            break;
+                    }
+                    console.log(n)
+                    $("#sum").html(n)
+                    return n
+                }
+                add(one, compute, two);
+            }
+        })
+    })
+</script>
+<script type="text/javascript">
+    $(function(){
+        var one = "0",two ="0", fu = "",f =0;
+        var n ;
+        $(".yunsuan input").click(function(){
+           sum = $("#Sum").html()
+           fu = this.value
+           $("#s").html(sum+fu)
+           f = 1
+        })
+        $(".shuzi input").click(function(){
+            if(f == 1){
+                two +=this.value;
+                var o = two.indexOf(0);
+                var l = two.length;
+                console.log(l)
+                if( o == 0){
+                    two = two.substring(o+1);
+                }
+                $("#Sum").html(two)
+            }
+            if(f == 0){
+                one +=this.value;
+                var o = one.indexOf(0);
+                if( o == 0){
+                    one = one.substring(o+1);
+                }
+                $("#Sum").html(one);
+            }
+        })
+        $(".deng").click(function(){
+            one = parseFloat(one);
+           
+            two = parseFloat(two);
+           
+            switch (fu){
+                case "+" : n = accMul(one,two,'+'); break;
+                case "-" : n = accMul(one,two,'-') ; break;
+                case "*" : n = accMul(one,two,'*') ; break;
+                case "/" : n = accMul(one,two,'/') ; break;
+            }
+            $("#s").html("")
+            $("#Sum").html("")
+            $("#Sum").html(n)
+            one = "0";
+            two = "0";
+            f= 0;
+        })
+        $(".ce").click(function(){
+            $("#s").html("")
+            $("#Sum").html("0")
+            one = "0";
+            two = "0";
+            f= 0;
+        })
+    })
+
+    function accMul(arg1, arg2,arg3) {
+        let m = 0;
+        const s1 = arg1.toString();
+        const s2 = arg2.toString();
+        if (s1.includes('.')) {
+            m += s1.split('.')[1].length;
+            console.log(m)
+        }
+        if (s2.includes('.')) {
+            m += s2.split('.')[1].length;
+            console.log(m)
+        }
+        switch(arg3){
+            case "+" : return Number(s1.replace('.', '')) + Number(s2.replace('.', '')) / Math.pow(10, m) ; break;
+            case '-' : return Number(s1.replace('.', '')) - Number(s2.replace('.', '')) / Math.pow(10, m) ; break;
+            case '*' : return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m) ; break;
+            case '/' : return Number(s1.replace('.', '')) / Number(s2.replace('.', '')) / Math.pow(10, m) ; break;
+        }
+    } 
+
+</script>

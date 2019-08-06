@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../antifake-new/destoryCode.css">
+    <script src="../../../js/flexible.js"></script>
+    <title></title>
+</head>
+
+<body>
+        <div id="divOne"></div>
+        <img id='imgOne'  style='border:1px solid red;'/>
+
+</body>
+
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/jquery.qrcode.min.js"></script>
+<script>
+   var qrcode= $('#divOne').qrcode('http://www.1235231246.com/').hide(); 
+   var canvas=qrcode.find('canvas').get(0);
+   $('#imgOne').attr('src',canvas.toDataURL('image/jpg'))
+  </script>
+
+</script>

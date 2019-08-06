@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <video src="../img/video.mp4" controls id="video1"  width="360" height="640"></video>
+    <video src="../img/xiaoship.mp4" controls id="video2"  width="360" height="640"></video>
+</body>
+
+</html>
+<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+<script>
+	(function() {
+		let captureImage = function(video) {
+			let canvas = document.createElement("canvas")
+			canvas.width = 360;
+			canvas.height = 640;
+			let ctx = canvas.getContext('2d');
+			ctx.drawImage(video, 0, 0, 360, 640);
+			let img = document.createElement("img");
+			img.src = canvas.toDataURL("image/png");
+			document.body.appendChild(img);
+		}
+		let video1 = document.getElementById("video1");
+		let video2 = document.getElementById("video2");
+			/* video1.addEventListener('loadeddata',function(){ captureImage(video1)});
+			video2.addEventListener('loadeddata',function(){ captureImage(video2)});  */
+			addCompatible(video1,"loadeddata",captureImage);
+			addCompatible(video2,"loadeddata",captureImage) ;
+			function addCompatible (x,y,z){
+				if (x.addEventListener) { //所有主流浏览器，除了 IE 8 及更早 IE版本
+					x.addEventListener(y,function(){z(x)});
+				} else if (x.attachEvent) {// IE 8 及更早 IE 版本
+					x.attachEvent(y, function(){z(x)});
+				}
+			}
+    })();
+</script>

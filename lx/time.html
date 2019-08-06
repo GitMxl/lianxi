@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/jquery-1.12.3.min.js"></script>
+</head>
+
+<body onbeforeunload="goodbye()">
+    <p id="t"></p>
+</body>
+
+</html>
+<script type="text/javascript">
+    function Time() {
+        var date = new Date()
+        var h = date.getHours();//小时
+        var m = date.getMinutes();//分钟
+        var s = date.getSeconds();//秒
+        var t = date.getDay()//星期
+        switch (t) {
+            case 0:
+                t = "星期日";
+                break;
+            case 1:
+                t = "星期一";
+                break;
+            case 2:
+                t = "星期二";
+                break;
+            case 3:
+                t = "星期三";
+                break;
+            case 4:
+                t = "星期四";
+                break;
+            case 5:
+                t = "星期五";
+                break;
+            case 6:
+                t = "星期六";
+                break;
+        }
+        var d = date.toLocaleTimeString() //时间
+        var r = date.toLocaleDateString() //日期
+        document.getElementById("t").innerHTML = t + "，时间：" + d + "，日期" + r
+        console.log(m)
+    }
+    setInterval(Time, )
+</script>
+<script>
+    window.onload = function () {
+        var date = new Date(); //获取当前时间
+        var expiresDays = 10; //将date设置为n天以后的时间
+        date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000); //格式化为cookie识别的时间
+        document.cookie = "pop= sdfds;expires="; //设置cookie
+        console.log(date.setTime(date.getTime() + expiresDays * 24 * 3600 * 1000))
+    }
+
+    // function closeWebPage() {
+    //     if (navigator.userAgent.indexOf("MSIE") > 0) { //close IE
+    //         if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+    //             window.opener = null;
+    //             window.close();
+    //         } else {
+    //             window.open('', '_top');
+    //             window.top.close();
+    //         }
+    //     } else if (navigator.userAgent.indexOf("Firefox") > 0) { //close firefox
+    //         window.location.href = 'about:blank ';
+    //     } else { //close chrome;It is effective when it is only one.
+    //         window.opener = null;
+    //         window.open('', '_self');
+    //         window.close();
+    //     }
+    // }
+</script>

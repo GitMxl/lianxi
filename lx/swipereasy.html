@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script src="../js/flexible.js"></script> -->
+    <link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            /* height: auto; */
+        }
+
+        input {
+            width: 8rem;
+            height: .8rem;
+            line-height: .8rem;
+            padding-left: 1rem;
+            background-color: rgba(255, 255, 255, .9);
+            border: 0;
+            -webkit-border-radius: .1rem;
+            -moz-border-radius: .1rem;
+            border-radius: .1rem;
+            font-size: 14px;
+            position: absolute;
+            left: .5rem;
+            top: .2rem;
+            z-index: 666;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <input type="text">
+        <div class="swiper-wrapper">
+            <!-- 轮播内容 -->
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">
+                    <img data-src="../img/11.jpg" class="swiper-lazy" alt="">
+                    <div class="swiper-lazy-preloader"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">
+                    <img data-src="../img/33.jpg" class="swiper-lazy" alt="">
+                    <div class="swiper-lazy-preloader"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">
+                    <img data-src="../img/22.jpg" class="swiper-lazy" alt="">
+                    <div class="swiper-lazy-preloader"></div>
+                </a>
+
+            </div>
+        </div>
+        <!-- 分页器 -->
+        <!-- <div class="swiper-pagination"></div> -->
+    </div>
+</body>
+
+</html>
+<script src="../js/swiper-3.4.2.min.js"></script>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script>
+    $(function () {
+        console.log(window.innerHeight);
+        let imgHei = window.innerHeight
+        /* $(".swiper-slide img").css("height",imgHei) */
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            speed: 300,
+            autoplay: 2000, //可选选项，自动滑动
+            autoplayDisableOnInteraction: false, //滑动后是否自动播放
+            pagination: '.swiper-pagination', //开启分页器
+            paginationClickable: true, //点击分页器按钮跳转
+            lazyLoading: true, //设为true开启图片延迟加载，使preloadImages无效。
+            lazyLoadingInPrevNext: true, //设置为true允许将延迟加载应用到最接近的slide的图片
+            touchMoveStopPropagation: false, //阻止touchmove冒泡事件。
+        })
+    })
+</script>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <script src="../js/flexible.js"></script>
+    <title></title>
+</head>
+<body>
+   <input type="submit" value="submit" id="submit" onclick="submitForm()">
+   <input type="text" name="" id="j_username">
+</body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/base64.js"></script>
+<script type="text/javascript">
+function submitForm(){
+    var abc=document.getElementById("submit");
+    abc.disabled=true;
+    var str1=document.getElementById('j_username').value.trim();
+    console.log(str1)
+    // var str2=document.getElementById('j_password').value.trim();
+    var result = Base.pass(str1);
+    document.getElementById('j_username').value=result;	
+    // var res = Base.encode(str2);
+    // document.getElementById('j_password').value=res;
+    // loginForm.submit()
+}
+    var res = Base.pass('125中文');//加密
+    var res1 = Base.crack (res);//解密
+    console.log(res)
+    console.log(res1)
+</script>

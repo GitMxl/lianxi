@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aes</title>
+ 
+</head>
+<body>
+ 
+   
+</body>
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script src="../js/crypto-js.js"></script>
+<script src="../js/aes.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/pad-nopadding.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/pad-zeropadding.min.js"></script> -->
+ <script>
+var d ="KbW/KwpNh5elhMcULN8O4A==";
+var f= "1ed86023c2fb34b0" ;
+// var g = "wx3884c03a4f8ff28f";
+// var o = '1707120936001';
+// ECB
+// function encrypt(a,b){
+//     var cs = CryptoJS.enc.Utf8.parse(a);
+//     var encrypted = CryptoJS.AES.encrypt(cs, b,{mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+//     return encrypted.toString();
+// }
+// function decrypt(a,b){
+//     var decrypt = CryptoJS.AES.decrypt(a, b,{mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+//     return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+// }
+// var e = encrypt(g,f);
+// console.log(e,'ECB','1',d);
+// var h = decrypt(d,f);
+// console.log(h,'ECB','1');
+// ECB
+// function Encrypt(a,b){
+//     var ps = CryptoJS.enc.Utf8.parse(b);
+//     var cs = CryptoJS.enc.Utf8.parse(a);
+//     var encrypted = CryptoJS.AES.encrypt(cs, ps,{mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+//     return encrypted.toString();
+// }
+function Decrypt(a,b){ 
+    var ps = CryptoJS.enc.Utf8.parse(b);
+    var decrypt = CryptoJS.AES.decrypt(a, ps,{mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+    return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+}
+// var q = Encrypt(g,f);
+// console.log(q,'ECB','2',d,'Base64');
+var w = Decrypt(d,f);
+console.log(w,'ECB','2');
+// var oo = Encrypt(d,f);
+// $("input[name='inpbox']").val(oo)
+// console.log(oo,'oo')
+// CBC
+// function encryptByCBC(a,b){
+//     var key = CryptoJS.enc.Utf8.parse(b); 
+//     var plaintText = a;   
+//     var iv=key; 
+//     var encryptedData = CryptoJS.AES.encrypt(plaintText, key,
+//         {
+//             iv:  iv,
+//             mode: CryptoJS.mode.CBC,  
+//             padding: CryptoJS.pad.Pkcs7  
+//         }
+//     );    
+//     return encryptedData.ciphertext.toString();
+// }
+
+// function decryptByCBC(a,b){
+//     var key = CryptoJS.enc.Utf8.parse(b);  
+//     var iv=key;
+//     var encryptedHexStr = CryptoJS.enc.Hex.parse(a);  
+//     var encryptedBase64Str = CryptoJS.enc.Base64.stringify(encryptedHexStr);  
+//     var decryptedData = CryptoJS.AES.decrypt(encryptedBase64Str, key, {  
+//         iv: iv,
+//         mode: CryptoJS.mode.CBC,  
+//         padding: CryptoJS.pad.Pkcs7  
+//     });
+//     var decryptedStr = decryptedData.toString(CryptoJS.enc.Utf8);  
+//     return decryptedStr;
+// }
+// var z = encryptByCBC(g,f);
+// console.log(z,'CBC',d);
+// var x = decryptByCBC(d,f);
+// console.log(x,'CBC');
+//
+// function EncryptNo(a,b){
+//     var ps = CryptoJS.enc.Utf8.parse(b);
+//     var cs = CryptoJS.enc.Utf8.parse(a);
+//     var encrypted = CryptoJS.AES.encrypt(cs, ps,{mode:CryptoJS.mode.ECB,padding:CryptoJS.pad.NoPadding});
+//     return encrypted.toString();
+// }
+// function DecryptNo(a,b){ 
+//     var ps = CryptoJS.enc.Utf8.parse(b);
+//     var decrypt = CryptoJS.AES.decrypt(a, ps,{mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.NoPadding});
+//     return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+// }
+// var v = EncryptNo(g,f);
+// console.log(v,'v','ECB_NO_pad',d);
+//  var m = DecryptNo(d,f);
+// console.log(m,'m','ECB_NO_PAD');
+</script> 
