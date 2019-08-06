@@ -1,0 +1,648 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+}
+
+/*ͷ��*/
+header {
+	width: 100%;
+	height: 5.2rem;
+	background: url(../img/userbackground.png) no-repeat;
+	background-size: 100% 6rem;
+	position: relative;
+	border-top: 1px solid RGB(249, 90, 88);
+	overflow: hidden;
+}
+
+header .Icon {
+	width: 1.47rem;
+	height: 1.47rem;
+	border: 1px white solid;
+	border-radius: 50%;
+	margin: auto;
+	margin-top: 0.8rem;
+
+}
+
+header .Icon img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+
+
+/*�û���*/
+header .user-name {
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	text-align: center;
+	font-size: 0.45rem;
+	color: white;
+	margin-top: 0.32rem;
+}
+
+/*�绰*/
+header .user-iphone {
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	text-align: center;
+	font-size: 0.35rem;
+	color: white;
+	margin-top: 0.32rem;
+}
+
+/*�۾�*/
+header .glasses {
+	width: 0.68rem;
+	height: 0.38rem;
+	position: absolute;
+	left: 46.5%;
+	top: 4.6rem;
+}
+
+header .glasses img {
+	width: 100%;
+	height: 100%;
+}
+
+.set {
+	position: absolute;
+	right: 0.8rem;
+	top: 0.5rem;
+}
+
+.set img {
+	width: 0.6rem;
+	height: 0.6rem;
+}
+
+.list-1 {
+	width: 100%;
+	height: 10.58%;
+	margin-top: -6%;
+	background: white;
+}
+
+.list-1 div {
+	width: 49.75%;
+	height: 100%;
+	float: left;
+}
+
+.list-1 .line {
+	width: 1px;
+	height: 0.58rem;
+	background: #DEDEDE;
+	margin-top: 9%;
+}
+
+.list-1 div div {
+	width: 100%;
+	height: 58%;
+	text-align: center;
+}
+
+.list-1 div .value {
+	color: #333333;
+	line-height: 1.38rem;
+	font-size: 0.58rem;
+
+
+}
+
+.list-1 div .unit {
+	height: 42%;
+	color: #999999;
+	line-height: 0.68rem;
+	font-size: 0.34rem;
+}
+
+.list-2 {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 0.2rem 0;
+	background: white;
+}
+
+.list-2 a {
+	display: block;
+	width: 49.5%;
+	height: 2.6rem;
+	float: left;
+	position: relative;
+	list-style: none;
+	border-bottom: solid #DEDEDE 1px;
+	text-decoration: none;
+	text-align: center;
+}
+
+.list-2 a:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.list-2 .line {
+	width: 1px;
+	height: 1.3rem;
+	background: #DEDEDE;
+	float: left;
+	margin-top: 6.88%;
+}
+
+.list-2-box {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.list-2 a .images {
+	width: 1rem;
+	height: 1rem;
+	background: url(../img/userbackground.png) no-repeat;
+	background-size: 14.6rem 9.1rem;
+	margin: 0 auto;
+}
+
+.list-2 a .images1 {
+	background-position: 0 -8.12rem;
+}
+
+.list-2 a .images2 {
+	background-position: -1.586rem -8.12rem;
+}
+
+.list-2 a .images3 {
+	background-position: -3.28rem -8.12rem;
+}
+
+.list-2 a .images4 {
+	background-position: -5rem -8.12rem;
+}
+
+.list-2 a .images5 {
+	background-position: -6.81rem -8.12rem;
+}
+
+.list-2 a .images6 {
+	background-position: -8.5rem -8.12rem;
+}
+
+.list-2 a span {
+	display: block;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+
+.list-2 a .Message-1 {
+	color: #333333;
+	font-size: 14px;
+}
+
+.list-2 a .Message-2 {
+	color: #999999;
+	font-size: 12px;
+	width: 66%;
+	margin-left: 34%;
+	text-align: left;
+	margin-top: 0.12rem;
+}
+
+/*底边栏样式*/
+/*.footer{width: 100%;height: 1.18rem;position: fixed;left: 0;right: 0;bottom:0;line-height: 1.18rem;font-weight: 500;z-index: 9999 !important;}
+.footer .tab-list{width: 100%;height: 100%;overflow: hidden;zoom: 1;background-color: #FF6666;}
+.foot-item{width: 24.76222%;border-right: 1px solid #c54e4f;text-align: center;float: left;font-weight: 500;}
+.footer .foot-item a{color: #FFFFFF;width: 100%;display: block;text-align: center;	font-size: 14px;}
+.active{background: white !important;}
+.active a p{color: #FF6666!important;}*/
+/*底边栏样式*/
+.footer {
+	width: 100%;
+	height: 1.3066rem;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 333;
+}
+
+.footer a {
+	color: black;
+}
+
+.footer .tab-list {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	zoom: 1;
+	background-color: #fff;
+}
+
+.footer .tab-list .tab-item {
+	width: 25%;
+	height: 100%;
+	float: left;
+	background-color: #fff;
+	border-top: 1px solid #f2f2f2;
+	padding: 0.1rem 0;
+}
+
+.footer .tab-list .tab-item i {
+	display: block;
+	width: 0.72rem;
+	height: 0.666rem;
+	margin-left: auto;
+	margin-right: auto;
+	background: url("../img/new/footer.png") no-repeat;
+	-webkit-background-size: 5.8rem 1.36rem;
+	background-size: 5.8rem 1.36rem;
+	background-position: 0 0;
+	margin-bottom: 0.1rem;
+}
+
+.footer .tab-list .tab-item .index {
+	background-position: 0 0;
+}
+
+.footer .tab-list .tab-item .minShop {
+	background-position: -1.7rem 0;
+}
+
+.footer .tab-list .tab-item .scoreShop {
+	background-position: -3.4rem 0;
+}
+
+.footer .tab-list .tab-item .myMessage {
+	background-position: -5.1rem -0.68rem;
+}
+
+.footer .tab-list .tab-item p {
+	text-align: center;
+	font-size: 9px;
+}
+
+.footer .tab-list .active p {
+	color: #FC9956;
+}
+
+/*内容*/
+.substance-box {
+	width: 100%;
+	background: #FFFFFF;
+	position: relative;
+	margin: 0.2rem auto 0;
+}
+
+.substance {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.substance .order-box {
+	width: 100%;
+	line-height: 1.2rem;
+	font-size: 0.4rem;
+	border-bottom: 1px solid rgb(242, 242, 242);
+	background: #FFFFFF;
+	position: relative;
+
+
+}
+
+.order-box a {
+	display: block;
+	padding-left: 0.6rem;
+	box-sizing: border-box;
+	color: #404040;
+}
+
+.order-box span {
+	margin-left: 50%;
+	vertical-align: middle;
+}
+
+.order-box img {
+	width: 0.2rem;
+	height: 0.32rem;
+	margin-left: 0.4rem;
+	vertical-align: middle;
+}
+
+.substance ul {
+	width: 90%;
+	height: 100px;
+	background: #FFFFFF;
+	margin: 0 auto;
+}
+
+.substance ul div {
+	width: 20%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	margin-left: -0.03rem;
+}
+
+.substance ul div img {
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-top: 34%;
+	overflow: hidden;
+}
+
+.substance ul p{
+	margin-top: 5px;
+	color: #404040;
+}
+
+.substance ul div li {
+	display: block;
+	width: 0.5rem;
+	height: 0.5rem;
+	color: red;
+	border-radius: 50%;
+	border: solid 1px red;
+	float: left;
+	margin-left: 46%;
+	text-align: center;
+	text-overflow: ellipsis;
+	background: #FFFFFF;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 24%;
+	margin-left: 45%;
+}
+
+/*收藏*/
+.max-Box {
+	overflow: hidden;
+	padding-bottom: 1.4rem;
+	box-sizing: border-box;
+}
+
+.favorite-box,
+.reduced-box {
+	width: 100%;
+	height: 1.1rem;
+	line-height: 1rem;
+	border-bottom: 1px solid rgb(242, 242, 242);
+	position: relative;
+	background: #fff;
+}
+
+.reduced-box {
+	margin-top: 0.2rem;
+}
+
+.reduced {
+	color: #404040;
+}
+
+.reduced span {
+	color: #404040;
+}
+
+.null {
+	width: 100%;
+	height: 0.3rem;
+	background-color: rgb(242, 242, 242);
+}
+
+.favorite {
+	color: #404040;
+}
+
+.favorite span {
+	color: #404040;
+}
+
+.favorite,
+.reduced {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding-left: 0.8rem;
+	box-sizing: border-box;
+}
+
+.favorite span,
+.reduced span {
+	position: absolute;
+	left: 6.8rem;
+	top: 0.05rem;
+}
+
+.favorite em,
+.reduced em {
+	color: red;
+}
+
+.favorite img,
+.reduced img {
+	width: 0.2rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 0.35rem;
+	left: 8.5rem;
+}
+
+.favorite-contetntBox {
+	width: 100%;
+	height: auto;
+	background: #fff;
+}
+
+
+.favorite-contetntBox .favorite-contetnt {
+	width: 92%;
+	height: 2.65rem;
+	margin: 0 auto;
+}
+
+.favorite-contetnt .pic {
+	width: 2.2rem;
+	height: 2.45rem;
+	float: left;
+	overflow: hidden;
+}
+
+.favorite-contetnt .pic img {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+
+.favorite-contetnt .money-box {
+	margin-top: 6%;
+	color: #F95858;
+}
+
+.favorite-contetnt .money-box .money1 {
+	font-size: 0.5rem;
+}
+
+
+.name-Box .name-list1,
+.name-Box .name-list2 {
+	color: #000000;
+}
+
+.name-Box img {
+	margin-left: 6%;
+	padding-top: 2px;
+}
+
+.favorite-contetnt .evaluate-box {
+	color: rgba(153, 153, 153, 1);
+}
+
+.favorite-contetnt .evaluate-box .count {
+	margin-left: 16%;
+}
+
+.name-Box {
+	width: 6rem;
+	height: 0.5rem;
+	margin-left: 28%;
+	text-overflow: ellipsis;
+}
+
+.name-Box span {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+span img {
+	width: 1rem;
+	height: 0.4rem;
+}
+
+/*优惠卷*/
+.discounts-box {
+	width: 100%;
+	height: 2.48rem;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+}
+
+.Deduction {
+	animation: change 10s linear 2s infinite;
+	width: 40%;
+	height: 2.48rem;
+	color: #FEFEFE;
+	background-color: #FFC654;
+	float: left;
+	position: relative;
+
+}
+
+.Deduction p {
+	text-align: center;
+	position: absolute;
+	top: 35%;
+	width: 100%;
+	font-size: 0.48rem
+}
+
+@keyframes change {
+	0% {
+		background-color: #FFC654;
+	}
+
+	100% {
+		background: #D37D29;
+	}
+}
+
+
+/*优惠价右*/
+
+.Deduction-right {
+	width: 58%;
+	height: 2.48rem;
+	color: #404040;
+	border-top: 1px solid rgb(242, 242, 242);
+	float: left;
+	position: relative;
+}
+
+.Deduction-right .right-1 {
+	margin-left: 3%;
+	margin-top: 3%;
+}
+
+.Deduction-right .right-2 {
+	margin-left: 3%;
+	margin-top: 10%;
+	color: #808080;
+}
+
+.Deduction-right .immediate-use {
+	width: 1rem;
+	height: 0.5rem;
+	position: absolute;
+	left: 83%;
+	top: 78%;
+}
+
+.Deduction-right .deadline {
+	width: 1rem;
+	height: 0.5rem;
+	position: absolute;
+	left: 83%;
+	top: 1%;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 724px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 34px;
+    }
+    body:after {
+        content: '';
+        z-index: 9998;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background: #fff;
+    }
+    /*导航操作栏上移*/
+	.max-Box {
+		overflow: hidden;
+		padding-bottom: 2.5rem;
+	}
+    .footer {
+        bottom: 40px !important;
+	}
+	
+}

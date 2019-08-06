@@ -1,0 +1,362 @@
+/*RESET*/
+*, *:before, *:after {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-touch-action: pan-y;
+    -webkit-overflow-scrolling:touch;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+    width:0;
+    height:0;
+}
+a,a:hover,a:active,a:focus{
+    text-decoration: none;
+    color: #000;
+}
+ul,ol,li{
+    list-style: none;
+}
+/*鍏憡鏍峰紡*/
+#page{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f2f2f2;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 1.3066rem;
+}
+/*杞挱鍥炬牱寮�*/
+.goodsPic-box{
+    width: 100%;
+    height: 4.3466rem;
+    position: relative;
+    overflow: auto;
+}
+.goodsPic-box ul{
+    width: 100%;
+    height: 100%;
+}
+.goodsPic-box ul li{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.goodsPic-box ul li img{
+    width: 100%;
+    height: 100%;
+}
+/*搴曡竟鏍忔牱寮�*/
+.footer{
+    width: 100%;
+    height: 1.3066rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom:0;
+    z-index: 333;
+}
+.footer .tab-list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    zoom: 1;
+    background-color: #fff;
+}
+.footer .tab-list .tab-item{
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+    border-top: 1px solid #f2f2f2;
+    padding: 0.1rem 0;
+}
+.footer .tab-list .tab-item i{
+    display: block;
+    width: 0.72rem;
+    height: 0.666rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../../img/new/footer.png") no-repeat;
+    -webkit-background-size: 5.8rem 1.36rem;
+    background-size: 5.8rem 1.36rem; 
+    background-position: 0 0;
+    margin-bottom: 0.1rem;
+}
+.footer .tab-list .tab-item .index{
+    background-position: 0 0;
+}
+.footer .tab-list .tab-item .minShop{
+    background-position: -1.7rem 0;
+ }
+.footer .tab-list .tab-item .scoreShop{
+    background-position: -3.4rem 0;
+}
+.footer .tab-list .tab-item .myMessage{
+    background-position: -5.1rem 0;
+}
+.footer .tab-list .tab-item p{
+    text-align: center;
+    font-size: 9px;
+}
+.footer.general-footer .tab-list .tab-item{
+    width: 33.33%;
+}
+.footer .tab-list .active p{
+		color:#FC9956;
+}
+.title-box{
+    width: 100%;
+    height: 1.3333rem;
+    padding-top: 0.38rem;
+    background-color: #fff;
+}
+.title-box .title{
+    width: 2.3rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(180deg,#ffc654,#d37d29);
+    background: -o-linear-gradient(180deg,#ffc654,#d37d29);
+    background: linear-gradient(180deg,#ffc654,#d37d29);
+    -webkit-background-clip: text;         /* 瑙勫畾鑳屾櫙鐨勫垝鍒嗗尯鍩� */
+    -webkit-text-fill-color: transparent;  /* 闃叉瀛椾綋棰滆壊瑕嗙洊 */
+}
+.title-box .title img{
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: -0.48rem;
+}
+/*banner鏍峰紡*/
+.mainInfo-box{
+    width: 100%;
+    height: 4.4rem;
+    position: relative;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.mainInfo-box .searchBar{
+    width: 9.2rem;
+    height: 0.8rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.2rem;
+    z-index:666;
+}
+.mainInfo-box .searchBar input{
+    width: 90%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    padding-left: 1rem;
+    background-color: rgba(255,255,255,0.9);
+    border: 0;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    border-radius: 0.1rem;
+    font-size: 14px;
+}
+.mainInfo-box .searchBar i{
+    position: absolute;
+    top: 0.15rem;
+    left: 0.2666rem;
+    font-size: 18px;
+    color: #808080;
+}
+.mainInfo-box .logo-box{
+    width: 1.8133rem;
+    height: 1.8133rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.mainInfo-box .logo-box img{
+    width: 100%;
+    height: 100%;
+}
+/*鎼滅储椤甸潰*/
+/*.mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    z-index: 999;
+    background: url("../images/searchBg.png") center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    background-color: #fff;
+}*/
+.search-box{
+    background-color: #f2f2f2;
+    padding: 0.2666rem 0.4rem;
+}
+.search-box form{
+    display: inline-block;
+    width: 8.08rem;
+}
+.search-box .control-box{
+    width: 100%;
+    height: 0.7733rem;
+    position: relative;
+}
+.search-box .control-box input{
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 0.7733rem;
+    font-size: 14px;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 0.1rem;
+    -moz-border-radius: 0.1rem;
+    border-radius: 0.1rem;
+}
+.search-box .control-box i{
+    position: absolute;
+    top: 0.13rem;
+    left: 0.2666rem;
+    font-size: 18px;
+    color: #808080;
+}
+.search-box .btn-cancel{
+    margin-left: 0.2rem;
+    font-size: 14px;
+    color: #808080;
+}
+.history-box{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.history-box .history-item{
+    width: 100%;
+    height: 1.3333rem;
+    line-height: 1.3333rem;
+    padding: 0 0.4rem;
+    overflow: hidden;
+    zoom:1;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.history-box .history-item .history{
+    width: 8rem;
+    height: 100%;
+    float: left;
+}
+.history-box .history-item .delete-box{
+    width: 0.32rem;
+    height: 0.32rem;
+    float: left;
+    margin-left: 0.2rem;
+}
+.history-box .history-item .delete-box a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../../img/new/deleteIcon.png") center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    margin-top: 0.45rem;
+}
+.operation-box{
+    width: 100%;
+    height: 1.333rem;
+}
+.operation-box .btn{
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 1.333rem;
+    text-align: center;
+    font-size: 14px;
+}
+.flex-cont{
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: flex;
+}
+.flex-item{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 20%;
+}
+/*input鏍峰紡*/
+input[type = "radio"],input[type="checkbox"]{
+    width: 0.5866rem;
+    height: 0.5866rem;
+    -webkit-appearance: none;
+    border: 0;
+    background: rgba(190,201,201,0.2) url('../../img/new/checkBg.png');
+    vertical-align: middle;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 0.5866rem 0.587rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 0.2rem;
+}
+input[type="radio"]:checked,input[type="checkbox"]:checked{
+    background-position: 0px 0px;
+}
+/*搴曡竟鎸夐挳*/
+
+@media screen and (device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2){
+    .search-box .btn-cancel{
+        font-size: 13px;
+    }
+    .search-box form{
+        width: 8rem;
+    }
+}
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2){
+    .search-box .btn-cancel{
+        font-size: 13px;
+    }
+    .search-box form{
+        width: 8rem;
+    }
+}
+@media only screen and (device-width: 375px) and (device-height: 724px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 34px;
+    }
+    body:after {
+        content: '';
+        z-index: 9998;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background: #fff;
+    }
+    /*导航操作栏上移*/
+    .footer {
+        bottom: 40px !important;
+    }
+}

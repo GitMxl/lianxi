@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="../antifake-new/companyIntorduce.css">
+    <script src="../../../js/flexible.js"></script>
+<title></title>
+</head>
+<body>
+    <div id="page"> 
+        <div class="content">
+            <div class="header" >
+                <a href="<%=basePath%>antifake/index"></a>
+                <h4>公司介绍</h4>
+            </div>
+            <div class="banner">
+                <img src="../../../img/2.jpg" alt="">        
+            </div>
+            <div class="board">
+                <span class="boardCheck">醉美太白</span>
+                <span>旅游文化</span>
+                <span>合作共建</span>
+            </div>
+            <div class="comp-cont">
+                <div class="comp-cont1">
+                    <div class="imgBox">
+                        <img src="../../../img/2.jpg" alt="">
+                        <img src="../../../img/2.jpg" alt="">
+                    </div>
+                    <div class="textBox">
+                        <p>1.山---太白山，中华龙脉，秦岭主峰，父亲山。</p>
+                        <p>2.水---天池 （大爷海、二爷海、三爷海），汤峪河，地温泉</p>
+                        <p>3.神---太白金星（东方启明星，夕位于西方称“太白），在太阳系中、既接近太阳又接近地球的星星、二十八星宿之一、远古“太白族人”的化身。</p>
+                        <p>4.人---诗仙、酒仙--李白，张载（眉伯、张子、横渠先生）药王孙思邈。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    var index = 0;
+    $(function(){
+        getData();
+        let span = $(".board span");
+            cont1 = $(".comp-cont1");
+            // 点击事件
+            span.click(function (e){ 
+            $(this).parents().children().removeClass("boardCheck");
+            $(this).addClass("boardCheck");
+            index = $(this).index();
+            getData()
+        });
+    })
+    function getData(){
+        $.ajax({
+            type: "post",
+            url: "",
+            data:index,
+            dataType:"json",
+            success: function (data) { 
+                
+            }
+        });
+    }
+</script>

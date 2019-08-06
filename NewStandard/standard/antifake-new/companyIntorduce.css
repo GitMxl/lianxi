@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{    
+    width: 100%;
+    height: 100%;
+    font-size:37.5px;
+    font-family: "微软雅黑";
+}
+fieldset, img { border:0; }
+#page{
+    min-height: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.content{
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch
+}
+.header{
+    width:100%;
+    height:1.2rem;
+    background:#393a3f;
+    color:#fff;
+    line-height:1.2rem;
+    position:relative;
+    font-size:20px;
+}
+.header a{
+    position:absolute;
+    left: 0.3rem;
+    top:0.15rem;
+    width:0.26rem;
+    height:0.8rem;
+    background:url(../../../img/arrows.png) no-repeat;
+    background-position:0 0;
+}
+.header h4{
+    text-align:center;
+}
+.banner{
+    width:100%;
+    height: 4.56rem;
+    width: 100%;
+    position: relative;
+    /* overflow:hidden; */
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+
+.board{
+    width:100%;
+    font-size:14px;
+    text-align:center;
+    margin-top:0.6rem;
+}
+.boardCheck{
+    color:#b87107;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(247, 211, 127)), to(rgb(184, 113, 7)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.board span{
+    margin-right:0.32rem;
+}
+.comp-cont{
+    width:100%;
+    height:auto;
+    padding:0 0.33rem ;
+    box-sizing:border-box;
+}
+.imgBox{
+    display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    height: 3.57rem;
+    margin-top:0.32rem;
+}
+.imgBox img{
+    width:4.51rem;
+    height:3.57rem;
+}
+.textBox{
+    font-size:14px;
+    margin-left:0.29rem;
+    color:#666666;
+    overflow-y:auto;
+    overflow-x:hidden;
+    margin-top:0.58rem;
+}
+.textBox p{
+    line-height:0.68rem;
+}

@@ -1,0 +1,493 @@
+body{
+	/*overflow: hidden;*/
+}
+
+.bannersfx{
+	display: block;
+	width: 100%;
+	height: 4.58rem;
+	position: relative;
+}
+.bannersfx ul{
+	height: 100%;
+}
+.bannersfx ul li{
+	height: 100%;
+}
+.bannersfx img{
+	width: 100%;
+	height: 100%;
+}
+
+/*鎵爜娆℃暟*/
+.QRcodesfx{
+  width: 95%;
+  margin: auto;
+}
+
+.QRcodesfx h2{
+	width: 100%;
+	color: #404040;
+    font-size: 0.425rem;
+    text-align: center;
+    margin-top: 0.18rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: 1.2px;
+}
+
+.QRcodesfx div{
+	width: 100%;
+	color: #404040;
+    font-size: 0.4rem;
+    margin-top: 0.18rem;
+    margin-left: 0.08rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  
+}
+
+.QRcodesfx div strong{
+	color: #fac37f;
+}
+
+
+
+/*鍒嗙晫绾�*/
+.null{
+	width: 100%;
+	height: 2px;
+    background-color: #f2f2f2;
+    margin-top: 0.2rem;
+    overflow: hidden;
+}
+
+/*鍔熻兘妯″潡*/
+.modulesfx-box{
+	width: 100%;
+	height: 4.28rem;
+	background: #FFFFFF;
+	margin-top: 0.1rem;
+	overflow: hidden;
+}
+.carouselsfx-inner{
+	overflow: hidden;
+}
+.modulesfx-box ul {	
+	width: 100%;
+	height: 100%;
+}
+
+.modulesfx-box ul a {
+	display: block;
+	width: 25%;
+	height: 1.85rem;
+	float: left;
+	margin-top: 0.18rem;
+	
+}
+
+.modulesfx-box ul a li{
+	display: block;
+}
+
+.modulesfx-box .carouselsfx-inner ul a .nav-pic{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../images/antifake/nav-sfx.png) no-repeat;
+	-webkit-background-size:5.76rem 2.4rem;
+    background-size: 5.76rem 2.4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic1{
+    background-position: 0 0;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic2{
+    background-position: -1.5rem 0;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic3{
+    background-position: -3.02rem 0;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic4{
+    background-position: -4.55rem 0;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic5{
+    background-position: 0 -1.2rem;
+}
+.modulesfx-box .carouselsfx-inner ul a .nav-pic6{
+    background-position:-1.5rem -1.2rem;
+}
+.modulesfx-box ul a span{
+	display: block;
+	text-align: center;
+	font-size: 0.385rem;
+	color: #404040;
+	margin-top: 0.1rem;
+}
+.tabtitlesfx{
+	width: 100%;
+	height: 0.8rem;
+	overflow: hidden;
+}
+.tabtitlesfx div{
+	width: 2.288rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	font-size: 0.42rem;
+	text-align: center;
+	text-indent: 0.38rem;
+	background: url(../images/ABC@2x.png) no-repeat left;
+	background-size: 0.5rem 0.5rem;
+	margin: auto;
+	margin-top: 0.18rem;
+	overflow: hidden;
+}
+
+.tabtitlesfx2{
+	margin-top: 0.28rem;
+}
+
+.tabtitlesfx2 div{
+	width: 4.5rem;
+}
+
+.basic-box{
+	width: 96%;
+	height: auto;
+	margin: auto;
+	margin-bottom: 0.15rem;
+    overflow: hidden;
+}
+
+.basic-box .basi-text{
+	width: 7rem;
+	height: auto;
+	float: left;
+}
+
+.basic-box .basi-text div{
+	width: 100%;
+	font-size: 0.4rem;
+	padding-left: 0.18rem;
+	overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+   -webkit-box-orient:vertical;
+   -webkit-line-clamp:2; 
+}
+
+.basic-box .basic-img{
+	width: 2rem;
+	height: 3rem;
+	float: left;
+	margin-top: 0.38rem;
+}
+
+.basic-box .basic-img img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.sumsfx {
+	width: 100%; 
+	height: auto;
+	font-size: 0.385rem;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 0.21rem;
+
+}
+
+.sumsfx .time-a{
+	width: 93%;
+	/*font-style:normal;
+	text-overflow: -o-ellipsis-lastline;  
+	overflow: hidden;  
+   	text-overflow: ellipsis;  
+   	display: -webkit-box;  
+   	-webkit-line-clamp: 1;  
+   	-webkit-box-orient: vertical;*/
+   	margin-top: -6%;
+   	margin-left: 7%;
+   	font-weight: bolder;
+}
+
+
+/*绗竴涓�*/
+
+.listsfx{
+	width: 99%;
+	color: black;
+	margin: 0 auto;
+    float: left;
+    padding-left: 4%;
+    overflow: hidden;
+    position: relative;
+	margin-top: 0.25rem;
+	margin-bottom: 4%;
+	
+}
+
+.linesfx{
+	float: left;
+	overflow: hidden;
+	background-color: #fc9956;
+	position: absolute;
+	top:7%;
+	left:5.8%;
+}
+/*浜殑鍏夋爣*/
+.listsfx .bright{
+	width: 0.4rem;
+    height: 0.4rem;
+    background: url(../img/1.png);
+    background-size: 100% 100%;
+}
+
+.listsfx p{
+	margin-left: 7%;
+	font-weight: 400;
+}
+
+.listsfx .pic{
+	display: block;
+	width: 46%;
+	height:2.88rem;
+	margin-left: 7%;
+	margin-top: 2%;
+}
+
+.pic img{
+	width: 100%;
+	height: 100%;
+}
+.cir{
+	width: 16px;
+}
+/*浜у搧鍙傛暟*/
+.parametersfx-box{
+	width: 100%;
+	font-size: 0.4rem;
+}
+
+.parametersfx-box h2{
+	width: 93%;
+	line-height: 0.88rem;
+	color: #000000;
+	margin: auto;
+	background: #f2f2f2;
+	padding-left: 0.24rem;
+	margin-bottom: 1px;
+}
+
+.parametersfx-box div{
+	width: 93%;
+	line-height: 0.88rem;
+	margin: auto;
+	background: #f2f2f2;
+	padding: 0 2%;
+	margin-bottom: 1px;
+}
+.parametersfx-box div span:first-child{
+	white-space: nowrap;
+}
+.parametersfx-box div span:last-child{
+	color: #666666;
+}
+
+/*浜у搧璇︽儏鍥剧墖*/
+
+.pmsfx-box{
+	width: 100%;
+	line-height: 1.28rem;
+	text-align: center;
+	font-size: 0.4rem;
+	
+	color: #000000;
+}
+.pmsfx-img{
+	width: 93%;
+	height: auto;
+	margin: auto;
+}
+
+.pmsfx-img img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/* .footer{
+    width: 100%;
+	height: 1.18rem;
+	position: fixed;
+    left: 0;
+    right: 0;
+    bottom:0;
+	line-height: 1.18rem; 
+	font-weight: 500;
+	z-index: 9999 !important;
+   
+}
+.footer .tab-list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	zoom: 1;	
+	background-color: #FF6666;
+}
+.foot-item{
+	width: 25%;
+	border-right: 1px solid #c54e4f;
+	text-align: center;
+	float: left;
+	font-weight: 500;
+}
+.footer .foot-item a{
+	color: #FFFFFF;
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+}
+.active{
+	background: white !important;
+}
+
+.active a p{
+	color: #FF6666!important;
+	
+}
+ */
+
+/*底边栏样式*/
+.foot{
+    width: 100%;
+    height: 1.3066rem;
+	position: fixed;
+    left: 0;
+    right: 0;
+	bottom:0;
+	z-index: 333;
+}
+.foot .tab-list{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    zoom: 1;
+    background-color: #fff;
+}
+.foot .tab-list .tab-item{
+    width: 25%;
+    height: 100%;
+    float: left;
+    background-color: #fff;
+    border-top: 1px solid #f2f2f2;
+    padding: 0.1rem 0;
+}
+.foot .tab-list .tab-item i{
+    display: block;
+    width: 0.72rem;
+    height: 0.666rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: url("../img/new/footer.png") no-repeat;
+    -webkit-background-size: 5.8rem 1.36rem;
+    background-size: 5.8rem 1.36rem; 
+	background-position: 0 0;
+	margin-bottom: 0.1rem;
+}
+.foot .tab-list .tab-item .index{
+    background-position: 0 -0.69rem;
+}
+.foot .tab-list .tab-item .minShop{
+    background-position: -1.7rem 0;
+ }
+.foot .tab-list .tab-item .scoreShop{
+    background-position: -3.4rem 0;
+}
+.foot .tab-list .tab-item .myMessage{
+    background-position: -5.1rem 0;
+}
+.foot .tab-list .tab-item p{
+    text-align: center;
+    font-size: 9px;
+}
+.foot.general-footer .tab-list .tab-item{
+    width: 33.33%;
+}
+.foot .tab-list .active p{
+		color:#FC9956;
+}
+.tabtitlesfx2 span:last-child{
+	color: black;
+}
+
+.vidBox{
+	background: #000000;
+	margin-left: 6.7%;
+	margin-top: 0.2%;
+	width: 46%;
+	height: 150px;
+	/* background-size: 1rem 1rem; */
+	position: relative;
+}
+video{
+	width:46%;
+	height: 150px;
+	display: none;
+	margin-left: 6.7%;
+	margin-top: 0.2%;
+}
+.timer{
+	display: inline-block;
+	width: 100%;
+	position: absolute;
+	left: 12%;
+	bottom: 10px;
+	color: #FFFFFF;
+}
+
+
+@media only screen and (min-width: 100px) and (max-width: 320px) {
+	/*鍔熻兘妯″潡*/
+.modulesfx-box{
+	width: 100%;
+	height: 4.28rem;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+}
+
+@media only screen and (device-width: 375px) and (device-height: 724px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 34px;
+    }
+    body:after {
+        content: '';
+        z-index: 9998;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background: #fff;
+    }
+    /*导航操作栏上移*/
+    .foot {
+        bottom: 40px !important;
+    }
+}
+
+/*@media only screen and (min-height 736px) {
+	 bottom: -0.2rem;
+}*/

@@ -1,0 +1,367 @@
+.content {
+    overflow-x: hidden;
+}
+
+.dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
+
+.dots li {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    margin-right: 0.2666rem;
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: -999em;
+    background-color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: .5;
+    text-align: center;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+
+.dots li:last-child {
+    margin-right: 0.6667rem;
+}
+
+.dots li.active {
+    background: #f95858;
+    opacity: 1;
+}
+
+.goods-box {
+    width: 100%;
+    background-color: #fff;
+    padding: 0.4rem 0;
+    padding-right: 0;
+    margin-bottom: 0.133rem;
+}
+
+.goods-box .goods-info {
+    width: 100%;
+    overflow: hidden;
+    zoom: 1;
+    padding:0 0.4rem;
+    margin-bottom: 0.2666rem;
+}
+
+.goods-info .pic-box {
+    width: 1.7333rem;
+    height: 1.7333rem;
+    float: left;
+    margin-right: 0.2667rem;
+}
+
+.goods-info .pic-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.goods-info .info-box {
+    width: 7.2rem;
+    float: left;
+}
+
+.goods-info .info-box .title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.1066rem;
+}
+
+.goods-info .info-box .info-item {
+    width: 100%;
+    margin-bottom: 0.1066rem;
+    font-size: 14px;
+}
+
+.scale-info {
+    position: relative;
+    padding-right: 0.4rem;
+    padding-left: 0.8rem;
+    background: -webkit-linear-gradient(90deg, #fc9956, #f95858);
+    background: -o-linear-gradient(90deg, #fc9956, #f95858);
+    background: linear-gradient(90deg, #fc9956, #f95858);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 0.32rem;
+    padding-top: 0.2666rem;
+    margin:0 0.4rem;
+}
+
+.scale-info:before {
+    content: '';
+    display: block;
+    width: .1333rem;
+    height: 0.8rem;
+    background-color: #f95858;
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+}
+
+.scale-info .scale-num {
+    font-size: 16px;
+    margin-bottom: 0.1066rem;
+}
+
+.nav-wrapper {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+
+.nav-box {
+    width: 200%;
+    position: relative;
+    overflow: auto;
+}
+
+.nav-box .navList-item {
+    width: 50%;
+    float: left;
+}
+
+.nav-box .navList-item .nav-list {
+    width: 100%;
+    overflow: hidden;
+    zoom: 1;
+    padding-top: 0.2666rem;
+}
+
+.nav-box .nav-item {
+    width: 25%;
+    float: left;
+    margin-bottom: 0.5067rem;
+    text-align: center;
+}
+
+.nav-item img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.nav-box .nav-item .nav-pic{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    left: 1.2rem;
+    background: url(../../images/nav.png) no-repeat;
+    -webkit-background-size:2.8rem 5.5rem;
+    background-size: 2.8rem 5.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-box .nav-item .nav-pic1{
+    background-position: 0 0;
+}
+.nav-box .nav-item .nav-pic2{
+    background-position: 0 -1.4rem;
+}
+.nav-box .nav-item .nav-pic3{
+    background-position: 0 -2.86rem;
+}
+.nav-box .nav-item .nav-pic4{
+    background-position: 0 -4.3rem;
+}
+.nav-box .nav-item .nav-pic5{
+    background-position: -1.63rem 0;
+}
+.nav-box .nav-item .nav-pic6{
+    background-position: -1.63rem -1.4rem;
+}
+.nav-box .nav-item .nav-pic7{
+    background-position: -1.63rem -2.86rem;
+}
+.nav-box .nav-item .nav-pic8{
+    background-position: -1.63rem -4.3rem;
+}
+.nav-box .nav-item .nav-title {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 0.1333rem;
+}
+
+.dots-list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.dots-list li {
+    display: inline-block;
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-right: 0.2666rem;
+    padding-left: 0;
+    text-indent: -999em;
+    background-color: #bfbfbf;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dots-list li:last-child {
+    margin-right: 0.6667rem;
+}
+
+.dots-list li.active {
+    background: #808080;
+}
+
+/* 中奖 */
+.mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.mask .tips {
+    z-index: 999;
+    background: url(../../images/antifake/prize-pic.png) no-repeat;
+    background-color: #ff1c4d;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    margin-left: -3.5rem;
+    margin-top: -3rem;
+    width: 7rem;
+    padding-bottom: 0.5rem;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    border-radius: .2rem;
+}
+
+.mask .tips .tipBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 2.9rem;
+}
+
+.mask .tips .tipBox i {
+    font-size: 32px;
+    color: orangered;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.mask .tips .tipBox p {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+}
+
+.mask .tips .tipBox p span {
+    color: #ffe900;
+}
+
+.mask .tips .tipBox .prize {
+    font-size: 18px;
+}
+
+.mask .tips .tipBox a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fee702;
+    width: 5.9466rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #d99e01;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    border-radius: .2rem;
+    margin-top: .2rem;
+}
+
+.mask .tips .tipBox .close_btn {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    width: .8rem;
+    height: .8rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-top: 0;
+}
+
+.mask .tips .tipBox .close_btn:before {
+    content: "";
+    width: 2px;
+    height: .6rem;
+    background-color: #700723;
+    position: absolute;
+    top: .1rem;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.mask .tips .tipBox .close_btn:after {
+    content: "";
+    width: 2px;
+    height: .6rem;
+    background-color: #700723;
+    position: absolute;
+    top: .1rem;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.mask .tips .tipBox .check_btn {
+    padding: 0 .2rem;
+}
+
+.lose-box {
+    display: block;
+}
+
+.lose-box .tips {
+    background-image: url(../../images/antifake/lose-pic.png);
+}
+
+.lose-box .tips .tipBox {
+    padding-top: 3.6rem;
+}
+
+.lose-box .tips .tipBox p {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: .2rem;
+    font-weight: bold;
+    color: #ffed00;
+}
+.footer .tab-list .tab-item .index{
+    background-position: 0 -0.69rem;
+}

@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width: 100%;
+    height:100%;
+    font-size:37.5px;
+    font-family: "微软雅黑";
+}
+fieldset, img { border:0; }
+#page{
+    min-height: 100%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.content{
+    overflow: scroll;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.header{
+    width:100%;
+    height:1.2rem;
+    background:#393a3f;
+    color:#fff;
+    line-height:1.2rem;
+    position:relative;
+    font-size:20px;
+}
+.header a{
+    position:absolute;
+    left: 0.3rem;
+    top:0.15rem;
+    width:0.26rem;
+    height:0.8rem;
+    background:url(../../../img/arrows.png) no-repeat;
+    background-position:0 0;
+}
+.header h4{
+    text-align:center;
+    letter-spacing: 0.06rem;
+}
+
+.codeTxt{
+    text-align: center;
+    font-size:0.44rem;
+    font-weight: 600;
+    line-height: 1.57rem;
+    letter-spacing: 0.06rem;
+}
+.codeImg{
+    width: 5.3rem;
+    height: 5.3rem;
+    background: #f2f2f2;
+    margin:0 auto;
+    position: relative;
+    padding: 0.3rem;
+    box-sizing: border-box;
+}
+.qrCodeBox{
+    display: block;
+    width: 4.746rem;
+    height: 4.746rem;
+    padding: 0.32rem 0.32rem ;
+    box-sizing: border-box;
+    background: #fff;
+}
+#qrcode{
+    display: none;
+    width:4.107rem;
+    height: 4.107rem;
+}
+.qrcode1{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -3.6rem;
+    margin-top: -3.8rem;
+    z-index: 666;
+    width: 7.3rem;
+    height: 7.3rem;
+}
+
+
+.desTxt{
+    text-align: center;
+    font-size: 0.36rem;
+    font-weight: 600;
+    line-height: 0.8rem;
+    letter-spacing: 0.02rem;
+}
+.prodBox{
+    width: 5.12rem;
+    margin:0 auto;
+    position: relative;
+    padding-left: 0.32rem;
+    font-size: 0.34rem;
+    margin-top: 0.4rem;
+}
+.prodBox p{
+    line-height: 0.667rem;
+}
+
+.prodBox p span:first-child{
+    font-weight: 600;
+}
+
+.maskBox{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}

@@ -1,0 +1,130 @@
+.pb0{
+    padding-bottom: 0;
+}
+.mainInfo-box{
+    
+}
+.service-box{
+    width: 100%;
+    height: 6.0266rem;
+    padding-top: 1.5466rem;
+}
+.service-box p{
+    margin-bottom: 0.5333rem;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.service-box span{
+    display: block;
+    font-size: 60px;
+    color: #fac457;
+    text-align: center;
+}
+.service-box span i{
+    display: inline-block;
+    width: 0.5866rem;
+    height: 0.5866rem;
+    margin-left: .1rem;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.nav-box{
+    width: 100%;
+    padding: 0.5333rem 0;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+}
+.nav-box .nav-list{
+    width: 100%;
+    overflow: hidden;
+    zoom: 1;
+}
+.nav-box .nav-item{
+    width: 25%;
+    float: left;
+}
+.nav-box .nav-item img{
+    display: block;
+    width: 1.1733rem;
+    height: 1.1733rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.2666rem;
+}
+.nav-box .nav-item p{
+    text-align: center;
+    font-size: 12px;
+    color: #404040;
+}
+.goods-box{
+    background-color: #fff;
+    padding-top: 0.48rem;
+    padding-bottom: 0.533rem;
+    color: #404040;
+}
+.noChange{
+    display: none;
+    width: 2.9333rem;
+    height: 3.0933rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+.noChange img{
+    width: 100%;
+    height: 100%;
+}
+.goods-box .title{
+    width: 100%;
+    margin-bottom: 0.2666rem;
+    padding-left: .4rem;
+    font-size: 16px;
+    border-left: 4px solid #f95858;
+}
+.goods-list{
+    width: 100%;
+    overflow: hidden;
+    zoom: 1;
+}
+.goods-list .goods-item{
+    width: 3rem;
+    float: left;
+    margin-left: 0.25rem;
+    margin-top: 0.5333rem;
+    text-align: center;
+}
+.goods-item a{
+    display: block;
+}
+.goods-list .goods-item .pic-box{
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 0.32rem;
+}
+.goods-list .goods-item .pic-box img{
+    display: block;
+    max-width:100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.goods-list .goods-item .name-box{
+    width: 100%;
+    margin-bottom: 0.1333rem;
+    font-size: 14px;
+}
+.goods-list .goods-item .price-box{
+    width: 100%;
+    font-size: 14px;
+    color: #fac457;
+}
+.goods-list .goods-item .price-icon{
+    display: inline-block;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url("../../img/new/scoreIcon.png") center no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../antifake-new/destoryCode.css">
+    <script src="../../../js/flexible.js"></script>
+    <title></title>
+</head>
+
+<body>
+    <div id="page">
+        <div class="content">
+            <div class="header">
+                <a href=""></a>
+                <h4>订单中心</h4>
+            </div>
+            <p class="codeTxt">核销二维码</p>
+            <div class="codeImg">
+                <div class="qrCodeBox">
+                    <div id="qrcode"></div>
+                    <img id="imgOne">
+                </div>
+            </div>
+            <p class="desTxt">请卖方管理员微信扫码核销</p>
+            <div class="prodBox">
+                <p>
+                    <span>产品名称：</span>
+                    <span>太白山一票通</span>
+                </p>
+                <p>
+                    <span>单价：</span>
+                    <span>￥299</span>
+                </p>
+                <p>
+                    <span>数量：</span>
+                    <span>3</span>
+                </p>
+                <p>
+                    <span>金额：</span>
+                    <span>￥899</span>
+                </p>
+                <p>
+                    <span>下单时间：</span>
+                    <span>2019-02-19&nbsp;&nbsp;&nbsp;14:37</span>
+                </p>
+                <p>
+                    <span>状态：</span>
+                    <span>未核销</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="maskBox"> </div>
+</body>
+
+</html>
+<script src="../../../js/jquery-1.12.3.min.js"></script>
+<script src="../../../js/jquery.qrcode.min.js"></script>
+<script>
+    let flag =1,
+        qrCode = $("#qrcode"),
+        qrCodeBox = $(".qrCodeBox"),
+        maskBox = $(".maskBox"),
+        qrcod,
+        cont = "https://www.baidu.com",
+        imgOne = $('#imgOne');
+    $(function () {
+        QRCode(flag);
+        imgOne.click(function () {
+           QRCode(flag);
+        })
+    })
+    // 二维码转换
+    function QRCode(num){
+        if( num == 1){
+            qrCode.html("")
+            qrCodeBox.removeClass("qrcode1");
+            maskBox.hide();
+            qrcod = qrCode.qrcode({
+                render: "canvas",
+                text: toUtf8(cont),//转码内容
+                width: 154,//宽度
+                height: 154,//高度
+                ecLevel: 'H',// 误差校正水平
+                background: "#ffffff",//背景色
+                foreground: "#000000" //二维码颜色
+            });
+            var canvas=qrcod.find('canvas').get(0);//找到二维码的盒子
+            imgOne.attr('src',canvas.toDataURL('image/jpg'));//将canvas转换为img标签
+            return flag = 0;
+        }else if( num == 0 ){
+            qrCode.html("")
+            qrCodeBox.addClass("qrcode1");
+            maskBox.show();
+            qrcod = qrCode.qrcode({
+                    render: "canvas",
+                    text: toUtf8(cont),
+                    width: 250,
+                    height: 250,
+                    ecLevel: 'H',
+                    background: "#ffffff",
+                    foreground: "#000000"
+                });
+            }
+            var canvas=qrcod.find('canvas').get(0);
+            imgOne.attr('src',canvas.toDataURL('image/jpg'));
+            return flag = 1;
+        }
+    // 中文转码
+    function toUtf8(str){
+        var out,i,len,c;
+        out = "";
+        len = str.length;
+        for (i = 0; i < len; i++) {
+            c = str.charCodeAt(i);
+            if ((c >= 0x0001) && (c <= 0x007F)) {
+                out += str.charAt(i);
+            } else if (c > 0x07FF) {
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            } else {
+                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+            }
+        }
+        return out;
+    }
+</script>
