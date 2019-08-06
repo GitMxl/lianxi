@@ -1,0 +1,623 @@
+jquery中轮播插件：
+
+		kinslideshow
+		superslide
+		unslider
+
+
+unslider属性：
+
+	    speed: 500,     // 动画过渡的速度(毫秒),如果不需要过渡效果就设置为false  
+            delay: 3000,    // 每张幻灯片的间隔时间(毫秒), 如果不是自动播放就设置为false  
+            init: 0,        // 初始化延迟时间(毫秒),如果不需要延迟就设置为false  
+            pause: !f,      // 当鼠标指针浮动在当前区域内时是否暂停自动播放  
+            loop: !f,       // 是否无尽循环播放  
+            keys: f,        // 是否开启键盘导航  
+            dots: f,        // 是否显示导航点  
+            arrows: f,      // 是否显示向前和向后的箭头  
+            prev: '←',     // 向前按钮中的显示文字(或html片段)  
+            next: '→',     // 向后......  
+            fluid: f,       // 是否宽度自适应  
+            starting: f,    // 在每个动画前调用的函数  
+            complete: f,    // 在每个动画之后调用的函数  
+            items: '>ul',   // 幻灯片的容器选择器  
+            item: '>li',    // 需要滚动的选择器  
+            easing: 'swing',// 动画的缓动函数(easing function)  
+            autoplay: true  // 是否允许自动播放  
+
+
+ $(document).keydown(function(event){
+    　　　　if(event.keyCode ==122){
+            console.log($("img"))
+        　　　　　　$("#bann").css({
+                    height:"100% !important"
+                })
+            　}
+});
+
+
+
+多行文本溢出隐藏
+
+	text-overflow: -o-ellipsis-lastline;  
+	overflow: hidden;  
+	text-overflow: ellipsis;  
+	display: -webkit-box;  
+	-webkit-line-clamp: 2;  
+	-webkit-box-orient: vertical;
+
+秒转时间
+
+	var sec_to_time = function(s) {
+			var t;
+			if(s > -1){
+				var hour = Math.floor(s/3600);
+				var min = Math.floor(s/60) % 60;
+				var sec = s % 60;
+				if(hour < 10) {
+					t = '0'+ hour + ":";
+				} else {
+						t = hour + ":";
+				}if(min < 10){
+					t += "0";
+				}
+				t += min + ":";
+				if(sec < 10){
+					t += "0";
+				}
+				t += sec.toFixed(2);
+				}
+					return t;
+	}
+
+git 使用方法
+
+	git remote add origin 地址      //第一次上传到服务器
+
+	git push -u origin master       //提交
+
+	git log                         //提交历史
+
+	git checkout -b dev             //创建分支名为dev
+
+	git branck 			//查看分支
+
+	git checkout master		//回到主干
+
+	git merge dev			//合并分支的工作
+
+	git branch -d dev		//删除分支
+
+报错
+
+fatal: remote origin already exists.
+	git remote rm origin
+
+
+兼容写法获取“box”的left值
+
+window.getComputedStyle? window.getComputedStyle(img).left : img.currentStyle.left
+
+
+
+flex兼容写法
+	display: -webkit-box;
+
+	display: -moz-box;
+
+	display: -webkit-flex;
+
+	display: -moz-flex;
+
+	display: -ms-flexbox;	
+
+	display: flex;
+
+
+
+禁止复制粘贴
+document.onselectstart = function(){ return false; };// 禁止文字选择
+	
+document.oncopy = function(){ return false; };// 禁止复制
+
+document.oncut = function(){ return false; };// 禁止剪切
+
+document.onpaste = function(){ return false; };// 禁止粘贴
+
+
+//禁止F12
+ window.onload = function(){
+            document.onkeydown = function(event){
+                var ev = event || window.event || arguments.callee.caller.arguments[0];
+                if(event.keyCode = 123){
+                    return false;
+                }
+            }
+        };
+//禁止鼠标右键
+        function nocontextmenu(){
+            event.cancelBubble = true;
+            event.returnValue = false;
+            return false;
+        }
+        function norightclick(e) {
+            if (window.Event) {
+                if (e.which == 2 || e.which == 3)
+                    return false;
+            } else if (event.button == 2 || event.button == 3){
+                event.cancelBubble = true
+                event.returnValue = false;
+                return false;
+            }
+        }
+        document.oncontextmenu = nocontextmenu;
+        document.onmousedown = norightclick;
+
+
+
+判断手机
+		let u = navigator.userAgent
+	     if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {
+	         console.log("安卓")
+	    }else if (u.indexOf('iPhone') > -1) {
+	        console.log("苹果手机") //苹果手机
+	    }else if (u.indexOf('Windows Phone') > -1) {
+	         console.log("winphone手机")//winphone手机
+	    }
+
+
+判断设备
+function IsPC() {
+          var userAgentInfo = navigator.userAgent;
+		  console.log(userAgentInfo)
+          var Agents = ["Android", "iPhone",
+                     "SymbianOS", "Windows Phone",
+                     "iPad", "iPod"];
+          var flag = true;
+          for (var v = 0; v < Agents.length; v++) {
+              if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                  flag = false;
+                 break;
+             }
+         }
+         return flag;
+    }
+
+
+
+
+
+
+判读是否微信
+ 	function isWeiXin(){ 
+         	var ua = navigator.userAgent.toLowerCase(); 
+         	if(ua.indexOf('micromessenger') != -1) { 
+            	 	return true; 
+         	} else { 
+             		return false; 
+         	} 
+     	}
+
+
+
+// 判断字体长度
+        function getByteLen(val) {
+            var len = 0;
+            for (var i = 0; i < val.length; i++) {
+               var length = val.charCodeAt(i);
+               if(length>=0&&length<=128)
+                {
+                    len += 1;
+                }
+                else
+                {
+                    len += 2;
+                }
+            }
+            return len;
+        }
+
+//去掉时分秒
+  	var time_str= '2019-02-23 00:00:00.0';
+	var t = time_str.substr(0,10);
+	alert(t);
+//css禁止复制
+	-moz-user-select: -moz-none;
+	-o-user-select:none;
+	-webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+	  
+	-webkit-user-select:none; /*webkit浏览器*/   
+	  
+	-khtml-user-select:none; /*早期浏览器*/   
+	  
+	-moz-user-select:none;/*火狐*/   
+	  
+	-ms-user-select:none; /*IE10*/   
+	  
+	user-select:none;   
+
+
+点击事件与if语句的结合：
+	当需要在点击事件中加if语句是要加在点击事件内部，负责还是会触发点击事件。列：
+		button.click（functi（）{
+			if（...）{
+				....
+			}
+		}）
+
+
+手机拖拽
+	<div id="shoppingCarId" style="width: 100px;height: 100px; background: violet;position: fixed;right: 200px;top: 100px;"></div>
+ 	 var shoppingCarId =  document.getElementById("shoppingCarId");
+        var oW1,oH1;
+        shoppingCarId.addEventListener("touchstart", function(e) {
+            var touches1 = e.touches[0];
+            oW1 = touches1.clientX - shoppingCarId.offsetLeft;
+            oH1 = touches1.clientY - shoppingCarId.offsetTop;
+            document.addEventListener("touchmove",defaultEvent,false);
+        },false);
+        shoppingCarId.addEventListener("touchmove", function(e) {
+            var touches1 = e.touches[0];
+            var oLeft1 = touches1.clientX - oW1;
+            var oTop1 = touches1.clientY - oH1;
+            if(oLeft1 < 0) {
+                oLeft1 = 0;
+            }else if(oLeft1 > document.documentElement.clientWidth - shoppingCarId.offsetWidth) {
+                oLeft1 = (document.documentElement.clientWidth - shoppingCarId.offsetWidth);
+            }
+	        if(oTop1 < 0){
+                oTop1 = 0;
+            }else if (oTop1 > document.documentElement.clientHeight - shoppingCarId.offsetHeight){
+            	oTop1 = (document.documentElement.clientHeight - shoppingCarId.offsetHeight );
+                console.log(document.documentElement.clientHeight - shoppingCarId.offsetHeight)
+            }
+            shoppingCarId.style.left = oLeft1 + "px";
+            shoppingCarId.style.top = oTop1 + "px";
+        },false);
+        shoppingCarId.addEventListener("touchend",function() {
+            document.removeEventListener("touchmove",defaultEvent,false);
+        },false);
+
+        function defaultEvent(e) {
+            e.preventDefault();
+        }
+
+
+//textarea禁止拉伸
+ 	textarea{
+		resize:none
+	}
+
+//自定义字体font-face
+  
+	https://www.fontke.com/
+
+//时间控件WdatePicker
+	 <input type="text" name="" class="Wdate" id="select-start-time">至
+         <input type="text" name="" class="Wdate" id="select-end-time">
+	 $("#select-start-time").click(function () {
+            WdatePicker({
+                lang: 'zh-cn',//语言
+                dateFmt: 'yyyy-MM-dd',//格式
+                maxDate: '#F{$dp.$D(\'select-end-time\')||\'%y-%M-%d\'}',//最大时间
+                readOnly: true,//是否只读
+                onpicked: start//获取点击事件
+            })
+        })
+        $("#select-end-time").click(function () {
+            WdatePicker({
+                lang: 'zh-cn',
+                dateFmt: 'yyyy-MM-dd',
+                minDate: '#F{$dp.$D(\'select-start-time\')}',//最小时间
+                maxDate: '%y-%M-%d',//最大时间
+                readOnly: true,
+                onpicked: end//获取点击事件
+            })
+        })
+        function start(){
+            console.log($("#select-start-time").val())
+        }
+        function end(){
+            console.log($("#select-end-time").val())
+        }	
+
+//uglify对js文件压缩
+	uglifyjs **.js -c -m -o **.min.js
+
+	
+//js计算误差
+ function accMul(arg1, arg2,arg3) {
+
+        let m = 0;
+        const s1 = arg1.toString();
+        const s2 = arg2.toString();
+
+        if (s1.includes('.')) {
+            m += s1.split('.')[1].length;
+        }
+
+        if (s2.includes('.')) {
+            m += s2.split('.')[1].length;
+        }
+        if(arg3 == '*' ){
+            return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m);
+        }else if(arg3 == '/'){
+            return Number(s1.replace('.', '')) / Number(s2.replace('.', '')) / Math.pow(10, m);
+        }else if(arg3 == '+'){
+            return Number(s1.replace('.', '')) + Number(s2.replace('.', '')) / Math.pow(10, m);
+        }else if(arg3 == '-'){
+            return Number(s1.replace('.', '')) - Number(s2.replace('.', '')) / Math.pow(10, m);
+        }
+        
+    } 
+
+
+//免费天气调用接口
+https://www.tianqiapi.com/
+
+
+//禁止开发者工具
+
+setInterval(function() {
+    check()
+}, 2000);
+var check = function() {
+    function doCheck(a) {
+        if (("" + a / a)["length"] !== 1 || a % 20 === 0) {
+            (function() {}
+                ["constructor"]("debugger")())
+        } else {
+            (function() {}
+                ["constructor"]("debugger")())
+        }
+        doCheck(++a)
+    }
+    try {
+        doCheck(0)
+    } catch (err) {}
+};
+check();
+
+
+
+iphone x适配footer
+@media only screen and (device-width: 375px) and (device-height: 812px) and 
+(-webkit-device-pixel-ratio: 3) {
+    /*增加头部适配层*/
+    body {
+        height: 100%;
+        box-sizing: border-box;
+        padding-top: 44px;
+    }
+    body:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 44px;
+        background-color: #000000;
+        z-index: 9998;
+    }
+    /*增加底部适配层*/
+    body {
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 34px;
+    }
+    body:after {
+        content: '';
+        z-index: 9998;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 34px;
+        background: #f7f7f8;
+    }
+    /*导航操作栏上移*/
+    .footer {
+        bottom: 34px;
+    }
+}
+
+
+
+渐变
+background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.3) 60%,
+        rgba(0, 0, 0, 0.2) 70%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(0, 0, 0, 0) 90%,
+        rgba(0, 0, 0, 0) 100%)
+
+判断鼠标当前在那个元素上方
+	var el=window.document.body;//声明一个变量，默认值为body
+        window.document.body.onmouseover = function(event){
+            el = event.target//鼠标每经过一个元素，就把该元素赋值给变量el
+            console.log('当前鼠标在',el,'元素上',);//在控制台中打印该变量
+            
+        }
+
+随机生成16进制颜色
+'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
+
+
+微信小程序单位换算
+1 px = 0.5 rpx；
+
+
+获取URL的中参数
+    q={};
+    location.search.replace(/([^?&=]+)=([^&]+)/g,(_,k,v)=>q[k]=v);
+
+
+// 判断字符是否为汉字，
+	function isChinese(s){
+		return /[\u4e00-\u9fa5]/.test(s);
+	}
+
+//unicode转汉字
+ function unicode2Ch(str){
+      if(!str){
+        return;
+      }
+      // 控制循环跃迁
+      var len = 1;
+      var result = '';
+            // 注意，这里循环变量的变化是i=i+len 了
+      for (var i = 0; i < str.length; i=i+len) {
+        len = 1;
+        var temp = str.charAt(i);
+        if(temp == '\\'){
+          // 找到形如 \u 的字符序列
+          if(str.charAt(i+1) == 'u'){
+            // 提取从i+2开始(包括)的 四个字符
+            var unicode = str.substr((i+2),4); 
+                                    // 以16进制为基数解析unicode字符串，得到一个10进制的数字
+            result += String.fromCharCode(parseInt(unicode,16).toString(10));
+            // 提取这个unicode经过了5个字符， 去掉这5次循环
+            len = 6;
+          }
+          else{
+            result += temp;
+          }
+        }
+        else{
+          result += temp;
+        }
+      }
+      return result;
+    }
+获取URL中参数，方法二：
+  function getQueryStringArgs(){ 
+        //取得查询字符串并去掉开头的问号
+        var qs = (location.search.length > 0 ? location.search.substring(1) : ""), 
+        //保存数据的对象
+        args = {}, 
+        //取得每一项
+        items = qs.length ? qs.split("&") : [], 
+        item = null, 
+        name = null, 
+        value = null, 
+        //在 for 循环中使用
+        i = 0, 
+        len = items.length; 
+        //逐个将每一项添加到 args 对象中
+        for (i=0; i < len; i++){ 
+            item = items[i].split("="); 
+            name = decodeURIComponent(item[0]); 
+            value = decodeURIComponent(item[1]); 
+            if (name.length) { 
+                args[name] = value; 
+            } 
+        } 
+        console.log(args); 
+    }
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); 	/* IE 9 */
+-moz-transform:rotate(7deg); 	/* Firefox */
+-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+-o-transform:rotate(7deg); 
+
+
+上传图片
+function uploadImgFile(){
+            let ImgFile =  document.querySelector('#ImgFile'),
+            ImgP = document.querySelector('.uploadPImg');
+            ImgP.ondrop = function(e) {
+                e.preventDefault()
+                var file = e.dataTransfer.files[0];
+                console.log(file,this)
+                read(file);
+            }
+            ImgP.ondragover = function(e) {
+                e.preventDefault();
+            }
+            ImgFile.onchange = function() {
+                var file = this.files[0];
+                console.log(file,'---1',)
+                read(file);
+            }
+            function read(file) {
+                let reader = new FileReader();
+                console.log(reader)
+                reader.readAsDataURL(file);
+                reader.onload = function() {  
+                    var image = new Image();
+                    image.onload=function(){
+                        var width = image.width;
+                        var height = image.height;
+                        alert(width+'======'+height+"=====");
+                    };
+                    image.src= this.result;
+                    $(".uploadPImg img").attr("src",this.result);
+                    $(".uploadPImg img").css("opacity",1);
+                    let selection = window.getSelection();
+                    let range = document.createRange();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
+            }
+        };
+
+
+
+上传视频
+ function uploadVideo(that){
+        let file = that.files[0];        
+            windowURL = window.URL || window.webkitURL;
+            videoURL = windowURL.createObjectURL(file);
+            fileType = file.type
+            videoType = fileType.search("video");   
+        if(videoType == -1){
+            return alert("上传格式错误");
+        }
+        $(".videoFile").prop("src",videoURL);
+        $(".videoFile").css("opacity",1);
+    }
+
+
+window.location.reload(true);刷新并重新请求数据
+
+去掉iphone中alert中的URL
+	window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }
+
+
+
+
+
+判断语句中如果：0== ""//值为true
+
+
+
+防抖和节流的区别:
+	实际上防抖和节流都是限制一些频繁的事件触发（window 的 resize、scroll、mousedown、mousemove、keyup、keydown）,但他们还是有实质性的区别的:
+	1.防抖是虽然事件持续触发，但只有等事件停止触发后n秒才执行函数(如果你在时间内重新触发事件，那么时间就重新算，这是防抖的特点，可以按照这个特点选择场景)。比如生活中的坐公交，就是一定时间内，如果有人陆续刷卡上车，司机就不会开车。只有别人没刷，司机才开车。
+	2.节流是持续触发的时候，每隔n秒执行一次函数比如人的眨眼睛，就是一定时间内眨一次。这是函数节流最形象的解释
+
+
+
+
+字符串拼接方法
+	1.let pStr = 'java'
+    	  pStr = pStr + 'Script'
+	  console.log(pStr)  // 返回  javaScript ，用“ + ”拼接 -------- 只连接100个以下的字符串建议用这种方法最方便
+	2.let myList=new Array('jpg', 'bmp', 'gif', 'png');
+    	  let pList=myList.join('|');
+    	  console.log(pList)  // 返回： jpg|bmp|gif|png  ---string 类型   //  遇到过后台入参需要用 逗号隔开时
