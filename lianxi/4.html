@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    
+    <title></title>
+</head>
+
+<body>
+        <!-- <input type="checkbox" name="a" id=""><label for="">sd</label> -->
+        <input type="text" id="text">
+        <input type="button" value="计算" onclick="calc()">
+</body>
+
+</html>
+<script src="../js/jquery-1.12.3.min.js"></script>
+<script>
+    /* for(var i in window){
+        console.log(i+"i"+window[i]+"window[i]")
+    } */
+    function calc(){
+        try{
+            document.getElementById("text").value = eval(document.getElementById("text").value)
+        }catch(e){
+            console.log(e)
+        }
+    }
+</script>

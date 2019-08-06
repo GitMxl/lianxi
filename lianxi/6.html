@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>扶贫记录</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+          <input type="text" name="" class="Wdate" id="select-start-time">
+                        <span>&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+                        <input type="text" name="" class="Wdate" id="select-end-time">
+    </body>
+
+</html>
+<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="../js/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#select-time").click(function() {
+            WdatePicker({
+                //el: this, //点击对象id，一般可省略el
+                lang: 'zh-cn', //语言选择，一般用auto
+                dateFmt: 'yyyy-MM-dd HH:mm:ss', //时间显示格式，年月日 时分秒，年月日就是yyyy-MM-dd
+                minDate: '#F{$dp.$D(\'inputstarttime\')}', //最小日期
+                maxDate: '%y-%M-%d', //最大日期（当前时间）
+                readOnly: true, //是否只读
+                isShowClear: true, //是否显示“清空”按钮
+                isShowOK: true, //是否显示“确定”按钮
+                isShowToday: true, //是否显示“今天”按钮
+                autoPickDate: true //为false时 点日期的时候不自动输入,而是要通过确定才能输入，为true时 即点击日期即可返回日期值，为null时(推荐使用) 如果有时间置为false 否则置为true
+            })
+        })
+         $("#select-start-time").click(function () {
+            WdatePicker({
+                lang: 'zh-cn',
+                dateFmt: 'yyyy-MM-dd HH:mm',
+                maxDate: '#F{$dp.$D(\'select-end-time\')||\'%y-%M-%d\'}',
+                readOnly: true,
+            })
+        })
+        // 日历控件-结束时间
+        $("#select-end-time").click(function () {
+            WdatePicker({
+                lang: 'zh-cn',
+                dateFmt: 'yyyy-MM-dd',
+                minDate: '#F{$dp.$D(\'select-start-time\')}',
+                maxDate: '%y-%M-%d',
+                readOnly: true
+            })
+        });
+    })
+</script>
